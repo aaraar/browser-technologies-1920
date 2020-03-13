@@ -1,9 +1,11 @@
 # Browser Technologies @cmda-minor-web 1920
-//Robuuste, toegankelijke websites ontwerpen en maken …
-
-In het vak Browser Technologies leer je hoe je goede, robuuste, toegankelijke websites maakt. Je gaat leren over Progressive Enhancement, Feature Detection en Fallback. Het web is er voor iedereen. In dit vak leer je hoe je daarvoor kan zorgen.
-
-Een van de mooiste principes van het web is dat het er echt is voor iedereen. Iedereen met een computer en een browser moet gebruik kunnen maken van het web. Het web is geen gecontroleerde (programmeer) omgeving. Je kan er gerust van uit gaan dat niemand precies hetzelfde te zien krijgt als wat jij ziet in jouw browser. Er zijn natuurlijk de technische beperkingen. Zoals - Afmetingen van de browser - Grootte van het apparaat - Manier van interactie - Kwaliteit van de hardware - Kwaliteit van het netwerk. En er zijn mensen. Allemaal verschillende mensen ... Hoe zorg je er dan voor dat websites het altijd doen?
+![Badge research](https://badgen.net/badge/icon/research?icon=codecov&label)
+![Badge Browsers](https://badgen.net/badge/icon/browsers/purple?icon=chrome&label)    
+In deze repo houd ik de opdrachten en onderzoek bij voor mijn persoonlijke ontwikkeling met browser technologies.    
+## Inhoudsopgave
+- [Leerdoelen](#leerdoelen)
+- [Opdrachten](#opdrachten)
+    * [Week 1](#week-1)
 
 ## Leerdoelen
 - _Wat is Progressive enhancement en hoe kun je dit toepassen._
@@ -11,48 +13,19 @@ Een van de mooiste principes van het web is dat het er echt is voor iedereen. Ie
 - _Leren een Browser Technologies onderzoeken, testen en implementeren als enhancement._
 
 [Rubric](https://docs.google.com/spreadsheets/d/1MV3BWwwg_Zz1n-S_qOM4iSm4gA4M6g0xAxGacyaPuac/edit?usp=sharing)
-
-## Planning
-
-| Planning  | Woensdag  |  Donderdag | Vrijdag  |
-|---|---|---|---|
-| <a href=#week-1>Week 1</a>  | Introductie, College over Progressive enhancement + briefing opdracht 1.1 | College Browser detect + presentaties opdracht 1.1 + briefing opdracht 1.2 Fork je OBA  | Feedbackgesprekken + Bowlen! |
-| <a href=#week-2>Week 2</a>  | College Feature detect + Briefing opdracht 2  | College Browsers + werken aan de opdracht | Feedbackgesprekken  |
-| <a href=#week-3>Week 3</a>  | College Notificaties + werken aan de opdracht  |  Werken aan de opdracht | Beoordelingsgesprekken  |
-
-
-
-## Programma
-
+## Opdrachten
 ### Week 1
-Het web is voor iedereen. Leren over Progressive enhancement en kennismaken met testen en het device lab. [Planning week 1](./slides/Week1.png)
+- [x] [Opdracht 1.1](./onderzoek/breekHetWeb.md)
+>    Opdracht 1.1 heb ik gedaan met de features
+>    - Geen Javascript
+>    - Geen muis/trackpad
+- [x] [Opdracht 1.2](./onderzoek/devices.md)
+>    Opdracht 2.2 heb ik gedeeltelijk op zowel mijn OBA als WAFS app gedaan, aangezien mijn OBA app vrij weinig content heeft en vooral een proof of concept is (veel Javascript) dus het werkte eigenlijk sws al op geen ander manier als lokaal op mijn laptop
+>   - QP Revolution
+>   - Ipod Touch 4G
+>   - Ipad Air 2
 
-#### Woensdag
-- [Les 1 - Progressive enhancement & Briefing Opdracht 1.1](./slides/BT1920%20College%20Les1%20-%20Progressive%20Enhancement.pdf)
-- [Opdracht 1.1 - Breek het web](Opdracht1.1.md)
-
-#### Weekly Nerd
-Sanne 't Hooft over Interactie. Woensdag 11 Maart, 16:00 in het minorlokaal.
-
-#### Donderdag
-- [Les 2 - Features testen & Briefing opdracht 1.2](./slides/BT1920%20College%20Les2%20-%20Progressive%20Enhancement.pdf)
-- [Opdracht 1.2 - Fork je OBA](Opdracht1.2.md)
-
-Deze les gaan we onderstaande artikelen bespreken:
-- [Everyone has JavaScript, right? by Stuart Langridge](https://kryogenix.org/code/browser/everyonehasjs.html)
-- [The Web I Want by Chris James](https://dev.to/quii/the-web-i-want-43o)
-
-
-#### Vrijdag
-Feedbackgesprekken opdracht 1.2 in groepjes, met studentassistenten en docenten.
-
-Deze les gaan we onderstaand artikel bespreken:
-- [Lezen: Understanding Progressive Enhancement by Aaron Gustafson](https://alistapart.com/article/understandingprogressiveenhancement)
-
-
-
-
-
+<!--
 ### Week 2
 Wat laat je zien als een browser of gebruiker een 'enhancement' niet kan tonen of zien? Hoe doe je Feature Detection en wat doe je als een techniek niet werkt of wordt ondersteund? [Planning week 2](./slides/Week2.png)
 
@@ -106,20 +79,7 @@ Verder werken aan opdracht 2
 
 #### Vrijdag
 Code review en beoordelingsgesprekken opdracht 2.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+-->
 
 
 <!-- Add a link to your live demo in Github Pages 🌐-->
