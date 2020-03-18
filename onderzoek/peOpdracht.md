@@ -8,11 +8,16 @@ Ik wil een enquete kunnen invullen over de minor Web Development, met verschille
 - Met JS wordt het een SPA die je makkelijk heen en weer laat gaan en local storage gebruikt zodat je de hash niet hoeft te onthouden
 
 ## Wireflow
-###Functional
+### Functional
 ![functional](./images/functional.jpg)
+- Voeg toe dat je link kan kopieëren ipv alleen de code onthouden
 
 ### Usable
 ![usable](./images/usable.jpg)
+- grotendeels CSS
 
 ### Pleasurable toevoegingen
 ![pleasurable](./images/pleasurable.jpg)
+- Form validatie in JS wanneer mogelijk
+- Server side formulier validatie is Nice to have, dus niet verplicht (PPK approves)
+- Misschien autosubmit on revisit d.m.v. JS/serviceworker (PPK approves)

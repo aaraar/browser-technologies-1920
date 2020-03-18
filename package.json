@@ -1,0 +1,23 @@
+{
+  "name": "browser-technologies-1920",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:aaraar/browser-technologies-1920.git",
+  "author": "Bas de Greeuw <bas.de.greeuw@van-ons.nl>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "fs-extra": "^8.1.0",
+    "mongodb": "^3.5.5",
+    "pug": "^2.0.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
