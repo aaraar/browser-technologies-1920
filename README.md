@@ -6,6 +6,7 @@ In deze repo houd ik de opdrachten en onderzoek bij voor mijn persoonlijke ontwi
 - [Leerdoelen](#leerdoelen)
 - [Opdrachten](#opdrachten)
     * [Week 1](#week-1)
+    * [Week 2](#week-2)
 
 ## Leerdoelen
 - _Wat is Progressive enhancement en hoe kun je dit toepassen._
@@ -24,6 +25,11 @@ In deze repo houd ik de opdrachten en onderzoek bij voor mijn persoonlijke ontwi
 >   - QP Revolution
 >   - Ipod Touch 4G
 >   - Ipad Air 2
+
+### Week 2
+- [x] [Opdracht 2](./onderzoek/peOpdracht.md)
+>    Use case om een enquete data te laten onthouden progressive enhanced
+>    - Wireflows
 
 <!--
 ### Week 2
