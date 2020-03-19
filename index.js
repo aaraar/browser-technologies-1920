@@ -92,19 +92,6 @@ client.connect(err => {
         }
     });
 
-    app.post('/back', (req, res) => {
-        if (req.body.uuid) {
-            collection.findOne({uuid: req.body.uuid})
-                .then(data => {
-                    res.render(req.body.q, {
-                        title: `Vraag ${req.body.q[1]} | WebDev Enquete`,
-                        uuid: req.body.uuid,
-                        data: data[req.body.q]
-                    });
-                })
-        }
-    });
-
     app.use(function (req, res, next) {
         res.status(404).render('404', {
             title: '404 | Webdev Enquete'
