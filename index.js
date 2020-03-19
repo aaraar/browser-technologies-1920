@@ -55,7 +55,8 @@ client.connect(err => {
         if (req.body.uuid) {
             let q;
             if (req.body.action === 'Volgende vraag') q = nextQ(req.body.q);
-            else if(req.body.action === 'Vorige vraag') q = prevQ(req.body.q);
+            else if (req.body.action === 'Vorige vraag') q = prevQ(req.body.q);
+            else if (req.body.action === 'Afronden') q = 'finish';
             collection.updateOne(
                 {uuid: req.body.uuid},
                 {
@@ -73,22 +74,68 @@ client.connect(err => {
                         if (data[q]) {
                             res.render(q,
                                 {
-                                    title: `Vraag ${q} | WebDev Enquete`,
+                                    title: `Vraag ${q[1]} | WebDev Enquete`,
                                     uuid: req.body.uuid,
                                     data: data[q]
                                 })
                         } else {
-                            res.render(q,
-                                {
-                                    title: `Vraag ${q} | WebDev Enquete`,
-                                    uuid: req.body.uuid,
-                                })
+                            if (q === 'finish') {
+                                res.render(q,
+                                    {
+                                        title: `Afronden | Webdev Enquete`,
+                                        uuid: req.body.uuid,
+                                        data: data
+                                    })
+                            }
+                            else {
+                                res.render(q,
+                                    {
+                                        title: `Vraag ${q[1]} | WebDev Enquete`,
+                                        uuid: req.body.uuid,
+                                    })
+                            }
                         }
                     })
                 )
                 .catch(err => {
                     console.error(err);
                 });
+        }
+    });
+
+    app.post('/finish', (req, res) => {
+        if (req.body.uuid) {
+            collection.updateOne(
+                {uuid: req.body.uuid},
+                {
+                    $set: {
+                        state: 'done',
+                        q1: {
+                            grade: req.body.grade1,
+                            desc: req.body.desc1,
+                        },
+                        q2: {
+                            grade: req.body.grade2,
+                            desc: req.body.desc2,
+                        },
+                        q3: {
+                            grade: req.body.grade3,
+                            desc: req.body.desc3,
+                        },
+                        q4: {
+                            grade: req.body.grade4,
+                            desc: req.body.desc4,
+                        },
+                        q5: {
+                            grade: req.body.grade5,
+                            desc: req.body.desc5,
+                        }
+                    }
+                },
+                {upsert: true})
+                .then(
+                    res.render('done', {title: 'Bedankt | WebDev Enquete', uuid: req.body.uuid})
+                );
         }
     });
 
