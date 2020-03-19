@@ -3,31 +3,33 @@ block content
     article
         header
             p= uuid
-            h2 Vraag 1
-            progress(value='1' max='5') 1/5
+            h2 Vraag 5
+            progress(value='5' max='5') 5/5
         if data
             form(method='POST' action='/question')
                 input(type='hidden' value=uuid name='uuid')
-                input(type='hidden' value='q1' name='q')
+                input(type='hidden' value='q5' name='q')
                 fieldset
                     legend Cijfer
-                    label(for='grade')  Hoe vond je de communicatie van de docenten en docent-assistenten over slack
+                    label(for='grade')  Hoe vaak heb je gegamed tussendoor?
                     input#grade(required type='number', name='grade' min='1', max='10' value=data.grade)
                 fieldset
                     legend Beschrijving
                     label(for='desc')  Zou je hier wat op willen aanmerken?
                     textarea#desc(rows='4', wrap='hard', name='desc')= data.desc
-                input(type='submit' value='Volgende vraag' name='action')
+                input(type='submit' value='Vorige vraag' name='action')
+                input(type='submit' value='Afronden' name='action')
         else
             form(method='POST' action='/question')
                 input(type='hidden' value=uuid name='uuid')
-                input(type='hidden' value='q1' name='q')
+                input(type='hidden' value='q5' name='q')
                 fieldset
                     legend Cijfer
-                    label(for='grade')  Hoe vond je de communicatie van de docenten en docent-assistenten over slack
+                    label(for='grade')  Hoe vaak heb je gegamed tussendoor?
                     input#grade(required type='number', name='grade' min='1', max='10')
                 fieldset
                     legend Beschrijving
                     label(for='desc')  Zou je hier wat op willen aanmerken?
                     textarea#desc(rows='4', wrap='hard', name='desc')
-                input(type='submit' value='Volgende vraag' name='action')
+                input(type='submit' value='Vorige vraag' name='action')
+                input(type='submit' value='Afronden' name='action')
