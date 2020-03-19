@@ -39,7 +39,9 @@ Voor makkelijk gebruik van de filesystem, schrijf ik zelf graag de volgende func
     * Kan controleren of een bestand is aangemaakt (en eventueel kan valideren)
 - writeToJson
     * Kan een JSON bestand wegschrijven met behulp van writeFile en checkFile
-    
+- getJson
+    * Kan een JSON bestand ophalen
+
 ```javascript
 function writeToJson( writePath, dataPromise ) {
     return new Promise ( ( resolve, reject ) => {
@@ -81,9 +83,9 @@ function checkFile( writePath, mode = 'json' ) {
 ```
 #### Wat gebeurd hier
 Om deze pattern toe te passen, gebruik je simpelweg writeToJson(); met als eerste parameter waar het bestand moet komen te staan
-en als tweed parameter een promise die resolved met de data die je wilt schrijven (ofwel uit een database of een API).
+en als tweede parameter een promise die resolved met de data die je wilt schrijven (ofwel uit een database of een API).
 - De dataPromise wordt afgewacht
-- De data uit de promise en de writePath worden meegegeven aan de writeToFIle functie
+- De data uit de promise en de writePath worden meegegeven aan de writeToFile functie
 - Als de writeToFile klaar is, checkt checkFile of het bestand echt bestaat.
 
 #### mkdirp

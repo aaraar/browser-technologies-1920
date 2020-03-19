@@ -53,11 +53,14 @@ client.connect(err => {
 
     app.post('/question', (req, res) => {
         if (req.body.uuid) {
+            let q;
+            if (req.body.action === 'Volgende vraag') q = nextQ(req.body.q);
+            else if(req.body.action === 'Vorige vraag') q = prevQ(req.body.q);
             collection.updateOne(
                 {uuid: req.body.uuid},
                 {
                     $set: {
-                        state: req.body.q,
+                        state: q,
                         [req.body.q]: {
                             grade: req.body.grade,
                             desc: req.body.desc,
@@ -67,9 +70,6 @@ client.connect(err => {
                 {upsert: true})
                 .then(
                     collection.findOne({uuid: req.body.uuid}).then(data => {
-                        let q;
-                        if (req.body.action === 'Volgende vraag') q = nextQ(req.body.q);
-                        else if(req.body.action === 'Vorige vraag') q = prevQ(req.body.q);
                         if (data[q]) {
                             res.render(q,
                                 {
