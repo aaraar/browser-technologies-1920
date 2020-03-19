@@ -29,9 +29,8 @@ client.connect(err => {
             collection.findOne({uuid: req.body.uuid})
                 .then(data => {
                     if (data) {
-                        if (data[data.state]) {
-                            res.render(data.state, {title: `Vraag ${data.state.substring(1)}`, uuid: data.uuid, data: data[data.state]});
-                        }
+                        if (data[data.state]) res.render(data.state, {title: `Vraag ${data.state.substring(1)}`, uuid: data.uuid, data: data[data.state]});
+                        else if (data.state === 'done') res.render(data.state, {title: `Nogmaals bedankt | WebDev Enquete`, uuid: data.uuid, fromBegin: true});
                         else res.render(data.state, {title: `Vraag ${data.state.substring(1)}`, uuid: data.uuid});
                     }
                     else {
