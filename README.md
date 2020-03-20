@@ -6,6 +6,10 @@ In deze repo houd ik de opdrachten en onderzoek bij voor mijn persoonlijke ontwi
 ## Inhoudsopgave
 - [Leerdoelen](#leerdoelen)
 - [Progressive enhancement case](#progressive-enhancement-case)
+    * [De case](#de-case)
+    * [De functionele laag](#de-functionele-laag)
+        + [Hoe werkt het](#hoe-werkt-het)
+        + [Waar wil ik feedback op](#feedback)
 - [Opdrachten](#opdrachten)
     * [Week 1](#week-1)
     * [Week 2](#week-2)
