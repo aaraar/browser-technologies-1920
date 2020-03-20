@@ -1,9 +1,11 @@
+### [Live Demo](https://browsertech1920.herokuapp.com)
 # Browser Technologies @cmda-minor-web 1920
 ![Badge research](https://badgen.net/badge/icon/research?icon=codecov&label)
 ![Badge Browsers](https://badgen.net/badge/icon/browsers/purple?icon=chrome&label)    
 In deze repo houd ik de opdrachten en onderzoek bij voor mijn persoonlijke ontwikkeling met browser technologies.    
 ## Inhoudsopgave
 - [Leerdoelen](#leerdoelen)
+- [Progressive enhancement case](#progressive-enhancement-case)
 - [Opdrachten](#opdrachten)
     * [Week 1](#week-1)
     * [Week 2](#week-2)
@@ -14,6 +16,54 @@ In deze repo houd ik de opdrachten en onderzoek bij voor mijn persoonlijke ontwi
 - _Leren een Browser Technologies onderzoeken, testen en implementeren als enhancement._
 
 [Rubric](https://docs.google.com/spreadsheets/d/1MV3BWwwg_Zz1n-S_qOM4iSm4gA4M6g0xAxGacyaPuac/edit?usp=sharing)
+
+## Progressive enhancement case
+Om de nieuwe kennis toe te passen en behaalde leerdoelen te onderbouwen, behandel ik in deze repo een case die vraagt om 
+een sterke vorm van progressive enhancement. In het algemeen betekend dit dat de website in zijn simpelste vorm, met alleen HTML,
+op bijna elke browser zijn kern functionaliteit kan uitvoeren.
+### De case
+De case waar ik voor gekozen heb luidt als volgt:   
+
+__Ik wil een enquete kunnen invullen over de minor Web Development, met verschillende antwoord mogelijkheden. Als ik de enquete niet afkrijg, wil ik later weer verder gaan met waar ik ben gebleven.__   
+
+Deze case lijkt mij perfect om te leren over progressive enhancement, aangezien formulieren op het web een onderdeel is waar
+heel vaak een beetje op wordt "gecheat". Vaak worden Javascript en/of andere nieuwe technieken gebruikt om de invulling van
+een formulier af te handelen en dit zo makkelijk mogelijk te maken voor de gebruijker. Het probleem hierbij is dat lang niet 
+iedereen diezelfde ervaring zo ervaart als dat hij ontworpen is. De manier zoals het eigenlijk hoort, met semantische HTML en
+correcte server afhandeling is lang niet bij iedereen meer bekend. Daarom wilde ik het juist eens op die manier opbouwen
+en daarna de extra laag eroverheen gieten.
+
+### De functionele laag
+1. Login met een studentennummer
+![Functional Index](./onderzoek/images/functionalIndex.png)
+
+2. Vul de vragen in
+    * Het is mogelijk om terug te gaan of later terug te komen door het stapsgewijs invullen te koppelen aan een studentnummer `(uuid)`
+![Functional vraag](./onderzoek/images/functionalVraag.png)
+
+3. Bekijk je antwoorden een laatste keer
+![Functional Overzicht](./onderzoek/images/functionalOverzicht.png)
+
+4. Bedankt bericht voor het invullen
+![Functional klaar](./onderzoek/images/functionalKlaar.png)
+
+5. Je kan het niet nog een keer invullen
+![Functional nog een keer](./onderzoek/images/functionalAgain.png)
+
+#### Hoe werkt het
+Om de functionele laag werkend te krijgen heb ik alle logica voor dit formulier op een node (express) server afgehandeld en schrijf
+ik de data weg naar een MongDB (Database). Elke keer dat er een stap wordt gezet wordt er een post request gemaakt naar de server,
+wordt de data geüpdatet in de database en wordt er een nieuwe pagina gerenderd op basis van de data die er eventueel al in stond.
+
+
+#### Feedback
+Ik zou graag feedback willen ontvangen op
+- Manieren om te enhancen los van service worker, local storage en AJAX calls
+- UX/flow van de app
+- Verschillende input velden
+- Semantische HTML
+- Feedback die de gebruiker ontvangt
+
 ## Opdrachten
 ### Week 1
 - [x] [Opdracht 1.1](./onderzoek/breekHetWeb.md)
