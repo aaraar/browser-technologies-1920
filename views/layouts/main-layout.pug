@@ -6,24 +6,26 @@ html(lang="nl")
         meta(content="ie=edge" http-equiv="X-UA-Compatible")
         title #{ title }
         link(rel='stylesheet' href='/styles.css')
-        link(rel='icon' href='/favicon/favicon.ico' type='image/x-icon')
-        link(rel='manifest' href='/manifest.webmanifest')
+        //link(rel='icon' href='/favicon/favicon.ico' type='image/x-icon')
+        //link(rel='manifest' href='/manifest.webmanifest')
     body
         header
             h1  #{ pageTitle }
+            if progress
+        progress(value=progress max='5') #{progress}/5
         main
             block content
         footer MIT © CMD Amsterdam, docs and images are CC-BY-4.0.
-        script(type='text/javascript').
-            if ('serviceWorker' in navigator)
-            {
-                window.addEventListener('load', function() {
-                    navigator.serviceWorker.register('/sw.js').then(function(registration) {
-                        registration.update()
-                    }, function(err) {
-                        console.log('ServiceWorker registration failed: ', err);
-                    });
-                });
-            }
+        //script(type='text/javascript').
+        //    if ('serviceWorker' in navigator)
+        //    {
+        //        window.addEventListener('load', function() {
+        //            navigator.serviceWorker.register('/sw.js').then(function(registration) {
+        //                registration.update()
+        //            }, function(err) {
+        //                console.log('ServiceWorker registration failed: ', err);
+        //            });
+        //        });
+        //    }
         script(src='/main.js' async)
 

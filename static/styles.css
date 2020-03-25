@@ -1,0 +1,322 @@
+/*********************
+RESETS
+    FROM:
+    http://meyerweb.com/eric/tools/css/reset/
+    v2.0 | 20110126
+    License: none (public domain)
+*********************/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/*********************
+VARIABLES
+*********************/
+:root {
+    --dark: #000;
+    --light: #fff;
+    --primary: #005a85;
+    --secondary: #ffa57a;
+}
+
+
+/*********************
+FONTS
+*********************/
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+h1 {
+    font-weight: 100;
+}
+
+h2, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+
+/*********************
+BREAKPOINTS
+*********************/
+@media only screen and (min-width: 1200px) {
+    body {
+        font-size: 24px;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    body {
+        font-size: 24px;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    body {
+        font-size: 22px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    body {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 400px) {
+    body {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 200px) {
+    body {
+        font-size: 16px;
+    }
+}
+
+/*********************
+STYLING
+*********************/
+
+html {
+    height: 100%;
+}
+main {
+    flex: 1 0 auto;
+    padding: 20px;
+}
+footer {
+    flex-shrink: 0;
+    padding: 20px;
+    background-color: var(--primary);
+    color: var(--secondary);
+}
+
+body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+article {
+    height: 100%;
+}
+
+body > header {
+    margin-left: 1em;
+    padding: 2em 1em 1em;
+    width: fit-content;
+    width: -moz-fit-content;
+    background-color: var(--primary);
+    color: var(--secondary);
+}
+
+progress {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-progress-appearance: unset;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1em;
+}
+
+main header {
+    color: lightgray;
+}
+
+main {
+    padding: 1em;
+}
+
+form {
+    padding: 1em;
+    border-radius: 5px;
+    background-color: #eee;
+}
+
+fieldset {
+    padding:1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+fieldset:nth-of-type(2) {
+    margin-top: 1em;
+}
+
+legend {
+    border-radius: 5px;
+    background-color: var(--primary);
+    color: var(--secondary);
+    padding: 10px;
+}
+
+label {
+    color: var(--dark);
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+input[type="number"] {
+    position: relative;
+    height: 4ch;
+    width: 8ch;
+}
+
+input, textarea {
+    margin-top: 1em;
+    border-radius: 2px;
+    border: none;
+}
+
+input[type="number"],
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button,
+input[type="submit"] {
+    border: none;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    background: #FFF url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAKUlEQVQYlWNgwAT/sYhhKPiPT+F/LJgEsHv37v+EMGkmkuImoh2NoQAANlcun/q4OoYAAAAASUVORK5CYII=) no-repeat center center;
+    background-origin: content-box;
+    width: 4ch;
+    border-left: 1px solid #BBB;
+    opacity: .5; /* shows Spin Buttons per default (Chrome >= 39) */
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button:hover,
+input[type="number"]::-webkit-inner-spin-button:active{
+    box-shadow: 0 0 2px var(--primary);
+    opacity: .8;
+}
+
+/* Override browser form filling */
+input[type="number"]:-webkit-autofill {
+    background: black;
+    color: red;
+}
+.done .content a,
+input[type="submit"] {
+    border-radius: 5px;
+    padding: 1em;
+    background-color: var(--primary);
+    color: var(--secondary);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    margin-right: 1em;
+    width: -moz-fit-content;
+    width: fit-content;
+    min-width: 10ch;
+}
+.done .content a:hover,
+input[type="submit"]:hover {
+    color: var(--primary);
+    background-color: var(--secondary);
+}
+
+article.index header {
+    color: var(--dark);
+}
+article.index form {
+    background-color: initial;
+    padding: unset;
+    margin-top:  1em;
+}
+
+article.index input[type="text"] {
+    height: 4ch;
+    border: 1px solid var(--dark);
+}
+
+article.index p strong {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+article.index p em {
+    display: block;
+    color: gray;
+    margin-bottom: 10px;
+}
+
+article.index p span {
+    color: gray;
+}
+
+.done p, .done h2, .done h3 {
+    margin-bottom: 10px;
+}
+
+.done h2 {
+    color: var(--dark);
+}
+.done h3 {
+    font-size: 3em;
+}
+
+.done .content {
+    background-color: #eee;
+    padding: 1em;
+    border-radius: 5px;
+}
+
+.done a {
+    display: block;
+    margin-top: 1em;
+    width: fit-content;
+    width: -moz-fit-content;
+}

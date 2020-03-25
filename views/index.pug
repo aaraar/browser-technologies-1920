@@ -1,8 +1,7 @@
 extends layouts/main-layout.pug
 block content
-    article
+    article.index
         header
-            h2 WebDev Minor Enquete
             section
                 p Welkom bij de WebDev minor enquete, hier zouden we graag je mening over de digitale lesvorm op afstand horen zodat wij hier van kunnen leren, mocht het nog een keer nodig zijn
         section.form--begin
@@ -14,8 +13,9 @@ block content
                             strong Voer een studentnummer in om makkelijk terug te komen of laat het veld leeg om anoniem te blijven
                         p
                             em Als je het veld leeg laat, ontvang je een unieke code en/of website link die je moet bewaren om terug te komen
-                    label(for='usid') Studentnummer
-                        span  (optioneel):
+                    label(for='usid')
+                        p Studentnummer
+                            span  (optioneel):
                         input#usid(type='text' name='uuid' inputmode="numeric" pattern="[0-9]{9}*" autocomplete="one-time-code" minlength="9" maxlength="9")
                     input(type='submit' value='Begin')
                     if existingUuid

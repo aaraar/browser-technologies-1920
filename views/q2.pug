@@ -3,8 +3,6 @@ block content
     article
         header
             p= uuid
-            h2 Vraag 2
-            progress(value='2' max='5') 2/5
         if data
             form(method='POST' action='/question')
                 input(type='hidden' value=uuid name='uuid')

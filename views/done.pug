@@ -2,12 +2,14 @@ extends layouts/main-layout.pug
 block content
     article
         header
-            p= uuid
-        if !fromBegin
-            h2 Bedankt voor het invullen van de WebDev Minor Enquete over het digitale lesgeven
-            h3 ✅
-            a(href='/') Terug naar het begin
-        else
-            h2 Je hebt de enquete al eens ingevuld, nogmaals bedankt voor het invullen van de WebDev Minor Enquete over het digitale lesgeven
-            h3 😬
-            a(href='/') Terug naar het begin
+            .done
+                p= uuid
+                .content
+                    if !fromBegin
+                        h2 Bedankt voor het invullen van de WebDev Minor Enquete over het digitale lesgeven
+                        h3 ✅
+                        a(href='/') Terug naar het begin
+                    else
+                        h2 Je hebt de enquete al eens ingevuld, nogmaals bedankt voor het invullen van de WebDev Minor Enquete over het digitale lesgeven
+                        h3 😬
+                        a(href='/') Terug naar het begin
