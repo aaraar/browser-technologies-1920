@@ -136,7 +136,7 @@ body {
     position: relative;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 100%;
 }
 
 article {
@@ -205,8 +205,8 @@ label {
 
 input[type="number"] {
     position: relative;
-    height: 4ch;
-    width: 8ch;
+    height: 8ch;
+    width: 16ch;
 }
 
 input, textarea {
@@ -227,9 +227,9 @@ input[type="submit"] {
 
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
-    background: #FFF url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAKUlEQVQYlWNgwAT/sYhhKPiPT+F/LJgEsHv37v+EMGkmkuImoh2NoQAANlcun/q4OoYAAAAASUVORK5CYII=) no-repeat center center;
+    background: #FFF url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAAjCAIAAADngZaFAAAACXBIWXMAABcRAAAXEQHKJvM/AAAAlElEQVRIie2VQQqAIBBFv+Ep6ya1rpvUNY0IXIjOfAUZjP7SxudzGAmBDuadL55QE7ccZCXLjUQSXefLh+ImjoyynW/WTlVWuMJ+GW3RB/WyQoHpnDXEPQ9/IN/RuB7X1oP79/fNP799uV74xvzHwrlm17/U39IdmYJ2X/lUhasqN3JLaPU803lI7JjmWM9vdGRkAdzf3n3PoRYkRQAAAABJRU5ErkJggg==) no-repeat center center;
     background-origin: content-box;
-    width: 4ch;
+    width: 8ch;
     border-left: 1px solid #BBB;
     opacity: .5; /* shows Spin Buttons per default (Chrome >= 39) */
     position: absolute;
