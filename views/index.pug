@@ -13,11 +13,11 @@ block content
                             strong Voer een studentnummer in om makkelijk terug te komen of laat het veld leeg om anoniem te blijven
                         p
                             em Als je het veld leeg laat, ontvang je een unieke code en/of website link die je moet bewaren om terug te komen
-                    label(for='usid')
+                    label(for='uuid')
                         p Studentnummer
                             span  (optioneel):
-                        input#usid(type='text' name='uuid' inputmode="numeric" pattern="[0-9]{9}*" autocomplete="one-time-code" minlength="9" maxlength="9")
-                    input(type='submit' value='Begin')
+                        input#uuid(type='text' name='uuid' inputmode="numeric" pattern="[0-9]{9}*" autocomplete="one-time-code" minlength="9" maxlength="9")
+                    input(type='submit' value='Begin')#begin
                     if existingUuid
                         p
                             strong Dit studentnummer bestaat al

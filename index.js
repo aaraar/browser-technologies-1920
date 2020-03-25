@@ -11,14 +11,10 @@ client.connect(err => {
     // res.render(data.state, {title: `Vraag ${data.state.substring(1)}`, uuid: data.uuid});
     const collection = client.db("bt1920").collection("users");
     app.set('view engine', 'pug');
-    app.use(bodyParser.urlencoded({extended: false}));
+    app.use(bodyParser.urlencoded({extended: true}));
     app.use(bodyParser.json());
 
     app.use(express.static('static'));
-
-    app.get('/', (req, res) => {
-        res.render('index', {title: 'WebDev Enquete', pageTitle: 'WebDev Minor Enquete', progress: 0, existingUuid: false})
-    });
 
     app.get('/begin', (req, res) => {
         res.render('404', {
@@ -28,6 +24,15 @@ client.connect(err => {
         });
     });
 
+    app.get('/', (req, res) => {
+        res.render('index', {title: 'WebDev Enquete', pageTitle: 'WebDev Minor Enquete', progress: 0, existingUuid: false})
+    });
+
+
+    app.post('/all', (req, res) => {
+        res.send(req.body.uuid)
+    });
+
     app.post('/begin', (req, res) => {
         if (req.body.uuid) {
             collection.findOne({uuid: req.body.uuid})
@@ -35,7 +40,7 @@ client.connect(err => {
                     if (data) {
                         const title = `Vraag ${data.state.substring(1)}`;
                         if (data[data.state]) res.render(data.state, {title: `${title} | WebDev Enquete`, pageTitle: title, progress: data.state.substring(1), uuid: data.uuid, data: data[data.state]});
-                        else if (data.state === 'done') res.render(data.state, {title: `Nogmaals bedankt | WebDev Enquete`, pageTitle: 'Nogmaals bedankt', progress: 5, uuid: data.uuid, fromBegin: true});
+                        else if (data.state === 'done') res.render(data.state, {title: `Nogmaals bedankt | WebDev Enquete`, pageTitle: 'Nogmaals bedankt', progress: 6, uuid: data.uuid, fromBegin: true});
                         else {
                             res.render(data.state, {title: `${title} | WebDev Enquete`, pageTitle: title, progress: data.state.substring(1), uuid: data.uuid});
                         }
@@ -147,7 +152,7 @@ client.connect(err => {
                 },
                 {upsert: true})
                 .then(
-                    res.render('done', {title: 'Bedankt | WebDev Enquete', pageTitle: 'Bedankt', progress: 5, uuid: req.body.uuid})
+                    res.render('done', {title: 'Bedankt | WebDev Enquete', pageTitle: 'Bedankt', progress: 6, uuid: req.body.uuid})
                 );
         }
     });
