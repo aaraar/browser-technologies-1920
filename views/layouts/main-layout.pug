@@ -10,12 +10,14 @@ html(lang="nl")
         //link(rel='manifest' href='/manifest.webmanifest')
     body
         header
-            h1  #{ pageTitle }
-            if progress
-        progress(value=progress max='5') #{progress}/5
+            .title
+                h1  #{ pageTitle }
+        if progress
+            progress(value=progress max='5') #{progress}/5
         main
             block content
-        footer MIT © CMD Amsterdam, docs and images are CC-BY-4.0.
+        footer
+            div MIT © CMD Amsterdam, docs and images are CC-BY-4.0.
         //script(type='text/javascript').
         //    if ('serviceWorker' in navigator)
         //    {
