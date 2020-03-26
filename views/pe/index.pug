@@ -1,0 +1,23 @@
+extends layouts/main-layout.pug
+block content
+    article.index
+        header
+            section
+                p Welkom bij de WebDev minor enquete, hier zouden we graag je mening over de digitale lesvorm op afstand horen zodat wij hier van kunnen leren, mocht het nog een keer nodig zijn
+        section.form--begin
+            form(method='POST' action='/begin')
+                fieldset
+                    legend Start nieuwe enquete
+                    section
+                        p
+                            strong Voer een studentnummer in om makkelijk terug te komen of laat het veld leeg om anoniem te blijven
+                        p
+                            em Als je het veld leeg laat, ontvang je een unieke code en/of website link die je moet bewaren om terug te komen
+                    label(for='uuid')
+                        p Studentnummer
+                            span  (optioneel):
+                        input#uuid(type='text' name='uuid' inputmode="numeric" pattern="[0-9]{9}*" autocomplete="one-time-code" minlength="9" maxlength="9")
+                    input(type='submit' value='Begin')#begin
+                    if existingUuid
+                        p
+                            strong Dit studentnummer bestaat al

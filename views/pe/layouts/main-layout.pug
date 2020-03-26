@@ -1,0 +1,10 @@
+div.app
+    header
+        .title
+            h1  #{ pageTitle }
+    if progress
+        progress(value=progress max='6') #{progress}/6
+    main
+        block content
+    footer
+        div MIT © CMD Amsterdam, docs and images are CC-BY-4.0.
