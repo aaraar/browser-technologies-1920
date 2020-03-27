@@ -8,8 +8,16 @@ Dit is alles wat je ziet als er geen Javscript beschikbaar is.
 Een skeleton interface waar Javscript eigenlijk alle content aan toe moet gaan voegen.
 Omdat ik nu ook zonder muis werk is ook gelijk duidelijk dat er niks op deze pagina daadwerkelijke content heeft om op te focussen,
 want met een druk op de tabtoets zit je direct in de URL balk.
+#### Op te lossen door:
+-  Een melding dat Javascript veel functionaliteiten bevat die niet werken zonder Javascript
+-  Een statische pagina server-side genereren op initial visit en daarna enhancen met JS
+
+
 ![Facebook zonder JS](./images/facebookBreak.png) 
 Een ander voorbeeld, wat iets eleganter is, maar nog steeds onbruikelijk is Facebook die gewoon simpelweg een melding geeft dat je javascript nodig hebt om de pagina te bezoeken.
+#### Op te lossen door:
+- Ook hier kan het server-side genereren van een initial visit wel content geven die nu mist
+- Voor zowel Youtube als Facebook is een statische versie van de site best wel een fijn alternatief als ze die aan zouden bieden voor performance
 
 Sommige websites doen dit heel goed en hebben nou eenmaal functionaliteit waar Javascript voor nodig is, maar de kern functionaliteit werkt nog steeds.
 ![Github login home zonder JS](./images/githubHomeBreak.png)

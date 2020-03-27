@@ -1,6 +1,7 @@
 # Testing NS INFO op verschillende devices
 
 ## QP revolution
+![Qp](./images/QP.jpg)
 #### Mozilla/5.0 (Linux; Android 4.4.4; revolution Build/KTU84Q)AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome 33.0.0.0 Mobile Safari/537.35
 WAFS: Geen Javascript dus alleen de header en footer laden
 OBA: De pagina laad, maar zonder de javascript kan je er helemaal niks mee. Valt me op dat alle animaties (CSS) wel gewoon helemaal prima werken
@@ -9,6 +10,7 @@ WAFS: Met Javascript werkt de applicatie wel volledig en de snelheid is nog best
 OBA: De Webcam/camera gaat niet aan dus kan de functionaliteit niet verder dan inladen van de startstate
 
 ## Ipod Touch
+![Qp](./images/ipod.jpg)
 #### Mozilla/5.0 (iPod; CPU iPhone OS 6_0_1 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A523 Safari/8536.25
 WAFS: Javscript wordt niet uitgevoerd en de CSS ook niet helemaal. Een uitlijning in de header werkt niet
 OBA: Werkt ook de webcam niet
@@ -19,6 +21,7 @@ OBA: Waarschijnlijk moet ik extra code toevoegen om de camera werkend te krijgen
 ## Screenreader
 WAFS: De app werkt best prima met screenreader, sommige onderdelen kunnen een iets duidelijker label hebben en er mist een uitleg wat de site nou eigenlijk doet, maar voorderest is het best duidelijk.
 Belangrijk is vooral dat ik de tab volgorde of layout verbeter. Als ik namelijk met toetstenbord door de pagina ga, moet ik na het kiezen weer door de hele pagina heen voordat ik op submit kan klikken.
+![Audio of screenrecorder](./audio/screenrecorder.wav)
 
 ## features uitzetten op WAFS
 #### 1. Afbeeldingen uitzetten
