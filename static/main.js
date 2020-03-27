@@ -255,7 +255,7 @@
 
   function q1Fn(locals) {var pug_html = "", pug_interp;var pug_debug_filename, pug_debug_line;try {var pug_debug_sources = {};
   ;var locals_for_with = (locals || {});(function (data, pageTitle, progress, uuid) {
-  pug_html = pug_html + "\u003Cbody\u003E";
+  pug_html = pug_html + "\u003Cdiv class=\"app\"\u003E";
   pug_html = pug_html + "\u003Cheader\u003E";
   pug_html = pug_html + "\u003Cdiv class=\"title\"\u003E";
   pug_html = pug_html + "\u003Ch1\u003E";
@@ -311,12 +311,12 @@
   pug_html = pug_html + "\u003C\u002Farticle\u003E\u003C\u002Fmain\u003E";
   pug_html = pug_html + "\u003Cfooter\u003E";
   pug_html = pug_html + "\u003Cdiv\u003E";
-  pug_html = pug_html + "MIT © CMD Amsterdam, docs and images are CC-BY-4.0.\u003C\u002Fdiv\u003E\u003C\u002Ffooter\u003E\u003C\u002Fbody\u003E";
+  pug_html = pug_html + "MIT © CMD Amsterdam, docs and images are CC-BY-4.0.\u003C\u002Fdiv\u003E\u003C\u002Ffooter\u003E\u003C\u002Fdiv\u003E";
   }.call(this,"data" in locals_for_with?locals_for_with.data:typeof data!=="undefined"?data:undefined,"pageTitle" in locals_for_with?locals_for_with.pageTitle:typeof pageTitle!=="undefined"?pageTitle:undefined,"progress" in locals_for_with?locals_for_with.progress:typeof progress!=="undefined"?progress:undefined,"uuid" in locals_for_with?locals_for_with.uuid:typeof uuid!=="undefined"?uuid:undefined));} catch (err) {pug.rethrow(err, pug_debug_filename, pug_debug_line, pug_debug_sources[pug_debug_filename]);}return pug_html;}
 
   function q2Fn(locals) {var pug_html = "", pug_interp;var pug_debug_filename, pug_debug_line;try {var pug_debug_sources = {};
   ;var locals_for_with = (locals || {});(function (data, pageTitle, progress, uuid) {
-  pug_html = pug_html + "\u003Cbody\u003E";
+  pug_html = pug_html + "\u003Cdiv class=\"app\"\u003E";
   pug_html = pug_html + "\u003Cheader\u003E";
   pug_html = pug_html + "\u003Cdiv class=\"title\"\u003E";
   pug_html = pug_html + "\u003Ch1\u003E";
@@ -374,12 +374,12 @@
   pug_html = pug_html + "\u003C\u002Farticle\u003E\u003C\u002Fmain\u003E";
   pug_html = pug_html + "\u003Cfooter\u003E";
   pug_html = pug_html + "\u003Cdiv\u003E";
-  pug_html = pug_html + "MIT © CMD Amsterdam, docs and images are CC-BY-4.0.\u003C\u002Fdiv\u003E\u003C\u002Ffooter\u003E\u003C\u002Fbody\u003E";
+  pug_html = pug_html + "MIT © CMD Amsterdam, docs and images are CC-BY-4.0.\u003C\u002Fdiv\u003E\u003C\u002Ffooter\u003E\u003C\u002Fdiv\u003E";
   }.call(this,"data" in locals_for_with?locals_for_with.data:typeof data!=="undefined"?data:undefined,"pageTitle" in locals_for_with?locals_for_with.pageTitle:typeof pageTitle!=="undefined"?pageTitle:undefined,"progress" in locals_for_with?locals_for_with.progress:typeof progress!=="undefined"?progress:undefined,"uuid" in locals_for_with?locals_for_with.uuid:typeof uuid!=="undefined"?uuid:undefined));} catch (err) {pug.rethrow(err, pug_debug_filename, pug_debug_line, pug_debug_sources[pug_debug_filename]);}return pug_html;}
 
   function q3Fn(locals) {var pug_html = "", pug_interp;var pug_debug_filename, pug_debug_line;try {var pug_debug_sources = {};
   ;var locals_for_with = (locals || {});(function (data, pageTitle, progress, uuid) {
-  pug_html = pug_html + "\u003Cbody\u003E";
+  pug_html = pug_html + "\u003Cdiv class=\"app\"\u003E";
   pug_html = pug_html + "\u003Cheader\u003E";
   pug_html = pug_html + "\u003Cdiv class=\"title\"\u003E";
   pug_html = pug_html + "\u003Ch1\u003E";
@@ -437,12 +437,12 @@
   pug_html = pug_html + "\u003C\u002Farticle\u003E\u003C\u002Fmain\u003E";
   pug_html = pug_html + "\u003Cfooter\u003E";
   pug_html = pug_html + "\u003Cdiv\u003E";
-  pug_html = pug_html + "MIT © CMD Amsterdam, docs and images are CC-BY-4.0.\u003C\u002Fdiv\u003E\u003C\u002Ffooter\u003E\u003C\u002Fbody\u003E";
+  pug_html = pug_html + "MIT © CMD Amsterdam, docs and images are CC-BY-4.0.\u003C\u002Fdiv\u003E\u003C\u002Ffooter\u003E\u003C\u002Fdiv\u003E";
   }.call(this,"data" in locals_for_with?locals_for_with.data:typeof data!=="undefined"?data:undefined,"pageTitle" in locals_for_with?locals_for_with.pageTitle:typeof pageTitle!=="undefined"?pageTitle:undefined,"progress" in locals_for_with?locals_for_with.progress:typeof progress!=="undefined"?progress:undefined,"uuid" in locals_for_with?locals_for_with.uuid:typeof uuid!=="undefined"?uuid:undefined));} catch (err) {pug.rethrow(err, pug_debug_filename, pug_debug_line, pug_debug_sources[pug_debug_filename]);}return pug_html;}
 
   function q4Fn(locals) {var pug_html = "", pug_interp;var pug_debug_filename, pug_debug_line;try {var pug_debug_sources = {};
   ;var locals_for_with = (locals || {});(function (data, pageTitle, progress, uuid) {
-  pug_html = pug_html + "\u003Cbody\u003E";
+  pug_html = pug_html + "\u003Cdiv class=\"app\"\u003E";
   pug_html = pug_html + "\u003Cheader\u003E";
   pug_html = pug_html + "\u003Cdiv class=\"title\"\u003E";
   pug_html = pug_html + "\u003Ch1\u003E";
@@ -500,12 +500,12 @@
   pug_html = pug_html + "\u003C\u002Farticle\u003E\u003C\u002Fmain\u003E";
   pug_html = pug_html + "\u003Cfooter\u003E";
   pug_html = pug_html + "\u003Cdiv\u003E";
-  pug_html = pug_html + "MIT © CMD Amsterdam, docs and images are CC-BY-4.0.\u003C\u002Fdiv\u003E\u003C\u002Ffooter\u003E\u003C\u002Fbody\u003E";
+  pug_html = pug_html + "MIT © CMD Amsterdam, docs and images are CC-BY-4.0.\u003C\u002Fdiv\u003E\u003C\u002Ffooter\u003E\u003C\u002Fdiv\u003E";
   }.call(this,"data" in locals_for_with?locals_for_with.data:typeof data!=="undefined"?data:undefined,"pageTitle" in locals_for_with?locals_for_with.pageTitle:typeof pageTitle!=="undefined"?pageTitle:undefined,"progress" in locals_for_with?locals_for_with.progress:typeof progress!=="undefined"?progress:undefined,"uuid" in locals_for_with?locals_for_with.uuid:typeof uuid!=="undefined"?uuid:undefined));} catch (err) {pug.rethrow(err, pug_debug_filename, pug_debug_line, pug_debug_sources[pug_debug_filename]);}return pug_html;}
 
   function q5Fn(locals) {var pug_html = "", pug_interp;var pug_debug_filename, pug_debug_line;try {var pug_debug_sources = {};
   ;var locals_for_with = (locals || {});(function (data, pageTitle, progress, uuid) {
-  pug_html = pug_html + "\u003Cbody\u003E";
+  pug_html = pug_html + "\u003Cdiv class=\"app\"\u003E";
   pug_html = pug_html + "\u003Cheader\u003E";
   pug_html = pug_html + "\u003Cdiv class=\"title\"\u003E";
   pug_html = pug_html + "\u003Ch1\u003E";
@@ -563,12 +563,12 @@
   pug_html = pug_html + "\u003C\u002Farticle\u003E\u003C\u002Fmain\u003E";
   pug_html = pug_html + "\u003Cfooter\u003E";
   pug_html = pug_html + "\u003Cdiv\u003E";
-  pug_html = pug_html + "MIT © CMD Amsterdam, docs and images are CC-BY-4.0.\u003C\u002Fdiv\u003E\u003C\u002Ffooter\u003E\u003C\u002Fbody\u003E";
+  pug_html = pug_html + "MIT © CMD Amsterdam, docs and images are CC-BY-4.0.\u003C\u002Fdiv\u003E\u003C\u002Ffooter\u003E\u003C\u002Fdiv\u003E";
   }.call(this,"data" in locals_for_with?locals_for_with.data:typeof data!=="undefined"?data:undefined,"pageTitle" in locals_for_with?locals_for_with.pageTitle:typeof pageTitle!=="undefined"?pageTitle:undefined,"progress" in locals_for_with?locals_for_with.progress:typeof progress!=="undefined"?progress:undefined,"uuid" in locals_for_with?locals_for_with.uuid:typeof uuid!=="undefined"?uuid:undefined));} catch (err) {pug.rethrow(err, pug_debug_filename, pug_debug_line, pug_debug_sources[pug_debug_filename]);}return pug_html;}
 
   function finishFn(locals) {var pug_html = "", pug_interp;var pug_debug_filename, pug_debug_line;try {var pug_debug_sources = {};
   ;var locals_for_with = (locals || {});(function (data, pageTitle, progress, uuid) {
-  pug_html = pug_html + "\u003Cbody\u003E";
+  pug_html = pug_html + "\u003Cdiv class=\"app\"\u003E";
   pug_html = pug_html + "\u003Cheader\u003E";
   pug_html = pug_html + "\u003Cdiv class=\"title\"\u003E";
   pug_html = pug_html + "\u003Ch1\u003E";
@@ -590,6 +590,7 @@
   pug_html = pug_html + "5\u002F5\u003C\u002Fprogress\u003E";
   pug_html = pug_html + "\u003Cform method=\"POST\" action=\"\u002Ffinish\"\u003E";
   pug_html = pug_html + "\u003Cinput" + (" type=\"hidden\""+pug.attr("value", uuid, true, true)+" name=\"uuid\"") + "\u003E";
+  pug_html = pug_html + "\u003Cinput type=\"hidden\" value=\"finish\" name=\"q\"\u003E";
   pug_html = pug_html + "\u003Cfieldset name=\"q1\"\u003E";
   pug_html = pug_html + "\u003Clegend\u003E";
   pug_html = pug_html + "Vraag 1\u003C\u002Flegend\u003E";
@@ -670,15 +671,15 @@
   pug_html = pug_html + " Zou je hier wat op willen aanmerken?";
   pug_html = pug_html + "\u003Ctextarea id=\"desc5\" rows=\"4\" wrap=\"hard\" name=\"desc5\"\u003E";
   pug_html = pug_html + (pug.escape(null == (pug_interp = data.q5.desc) ? "" : pug_interp)) + "\u003C\u002Ftextarea\u003E\u003C\u002Flabel\u003E\u003C\u002Ffieldset\u003E\u003C\u002Ffieldset\u003E";
-  pug_html = pug_html + "\u003Cinput type=\"submit\" value=\"Afronden\"\u003E\u003C\u002Fform\u003E\u003C\u002Fheader\u003E\u003C\u002Farticle\u003E\u003C\u002Fmain\u003E";
+  pug_html = pug_html + "\u003Cinput type=\"submit\" value=\"Versturen\"\u003E\u003C\u002Fform\u003E\u003C\u002Fheader\u003E\u003C\u002Farticle\u003E\u003C\u002Fmain\u003E";
   pug_html = pug_html + "\u003Cfooter\u003E";
   pug_html = pug_html + "\u003Cdiv\u003E";
-  pug_html = pug_html + "MIT © CMD Amsterdam, docs and images are CC-BY-4.0.\u003C\u002Fdiv\u003E\u003C\u002Ffooter\u003E\u003C\u002Fbody\u003E";
+  pug_html = pug_html + "MIT © CMD Amsterdam, docs and images are CC-BY-4.0.\u003C\u002Fdiv\u003E\u003C\u002Ffooter\u003E\u003C\u002Fdiv\u003E";
   }.call(this,"data" in locals_for_with?locals_for_with.data:typeof data!=="undefined"?data:undefined,"pageTitle" in locals_for_with?locals_for_with.pageTitle:typeof pageTitle!=="undefined"?pageTitle:undefined,"progress" in locals_for_with?locals_for_with.progress:typeof progress!=="undefined"?progress:undefined,"uuid" in locals_for_with?locals_for_with.uuid:typeof uuid!=="undefined"?uuid:undefined));} catch (err) {pug.rethrow(err, pug_debug_filename, pug_debug_line, pug_debug_sources[pug_debug_filename]);}return pug_html;}
 
   function doneFn(locals) {var pug_html = "", pug_interp;var pug_debug_filename, pug_debug_line;try {var pug_debug_sources = {};
   ;var locals_for_with = (locals || {});(function (fromBegin, pageTitle, progress, uuid) {
-  pug_html = pug_html + "\u003Cbody\u003E";
+  pug_html = pug_html + "\u003Cdiv class=\"app\"\u003E";
   pug_html = pug_html + "\u003Cheader\u003E";
   pug_html = pug_html + "\u003Cdiv class=\"title\"\u003E";
   pug_html = pug_html + "\u003Ch1\u003E";
@@ -715,7 +716,7 @@
   pug_html = pug_html + "\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003C\u002Fheader\u003E\u003C\u002Farticle\u003E\u003C\u002Fmain\u003E";
   pug_html = pug_html + "\u003Cfooter\u003E";
   pug_html = pug_html + "\u003Cdiv\u003E";
-  pug_html = pug_html + "MIT © CMD Amsterdam, docs and images are CC-BY-4.0.\u003C\u002Fdiv\u003E\u003C\u002Ffooter\u003E\u003C\u002Fbody\u003E";
+  pug_html = pug_html + "MIT © CMD Amsterdam, docs and images are CC-BY-4.0.\u003C\u002Fdiv\u003E\u003C\u002Ffooter\u003E\u003C\u002Fdiv\u003E";
   }.call(this,"fromBegin" in locals_for_with?locals_for_with.fromBegin:typeof fromBegin!=="undefined"?fromBegin:undefined,"pageTitle" in locals_for_with?locals_for_with.pageTitle:typeof pageTitle!=="undefined"?pageTitle:undefined,"progress" in locals_for_with?locals_for_with.progress:typeof progress!=="undefined"?progress:undefined,"uuid" in locals_for_with?locals_for_with.uuid:typeof uuid!=="undefined"?uuid:undefined));} catch (err) {pug.rethrow(err, pug_debug_filename, pug_debug_line, pug_debug_sources[pug_debug_filename]);}return pug_html;}
 
   const templates = {
@@ -769,15 +770,23 @@
       }
   }
 
-  function renderPage ( data ) {
+  function renderPage ( data, fromBegin = true ) {
       const title = `Vraag ${ data.state[ 1 ] }`;
-      if ( data[ data.state ] || data.state === 'finish' ) {
+      if ( data[ data.state ] ) {
           renderBody ( templates[ `${ data.state }Fn` ] ( {
               title: `${ title } | WebDev Enquete`,
               pageTitle: title,
               progress: data.state.substring ( 1 ),
               uuid: data.uuid,
               data: data[ data.state ]
+          } ) );
+      }else if ( data.state === 'finish' ) {
+          renderBody ( templates[ `${ data.state }Fn` ] ( {
+              title: `Afronden | WebDev Enquete`,
+              pageTitle: 'Afronden',
+              progress: data.state.substring ( 1 ),
+              uuid: data.uuid,
+              data: data
           } ) );
       } else if ( data.state === 'done' ) {
           renderBody ( templates[ `${ data.state }Fn` ] ( {
@@ -787,6 +796,7 @@
               uuid: data.uuid,
               fromBegin: true
           } ) );
+          clearStorage();
       } else {
           renderBody ( templates[ `${ data.state }Fn` ] ( {
               title: `${ title } | WebDev Enquete`,
@@ -898,6 +908,7 @@
   function activatePrevNext () {
       document.querySelector ( 'form' ).addEventListener ( 'submit', ( e ) => {
           e.preventDefault ();
+          console.log(document.activeElement);
           if ( document.activeElement.value === 'Volgende vraag' ) {
               console.log ( "Volgende vraag" );
               getStorage().then(user => {
@@ -908,11 +919,32 @@
                   renderPage(user);
                   init(false);
               });
-          } else {
+          } else if (document.activeElement.value === 'Vorige vraag') {
               console.log ( "Vorige vraag" );
               getStorage().then(user => {
                   console.log(prevQ(user.state));
                   user.state = prevQ(user.state);
+                  storeData(user);
+                  sendData(user);
+                  renderPage(user);
+                  init(false);
+              });
+          } else if (document.activeElement.value === 'Versturen') {
+              console.log ( "Versturen" );
+              getStorage().then(user => {
+                  console.log('local state = done');
+                  user.state = 'done';
+                  storeData(user);
+                  sendData(user);
+                  renderPage(user, false);
+                  init(false);
+                  clearStorage();
+              });
+          } else {
+              console.log ( "Afronden" );
+              getStorage().then(user => {
+                  console.log('finish');
+                  user.state = 'finish';
                   storeData(user);
                   sendData(user);
                   renderPage(user);
@@ -924,13 +956,15 @@
 
   function watchForm () {
       const form = document.querySelector ( 'form' );
-      const state = form.elements.q.value;
+      const state = form.elements.q.value || 'done';
       form.addEventListener ( 'change', ( e ) => {
           updateEntry ( form, state );
       } );
-      document.getElementById ( 'desc' ).addEventListener ( 'keyup', ( e ) => {
-          updateEntry ( form, state );
-      } );
+      document.querySelectorAll ( 'desc' ).forEach(desc => {
+          desc.addEventListener ( 'keyup', ( e ) => {
+              updateEntry ( form, state );
+          } );
+      });
   }
 
   function storeData ( data ) {
@@ -1050,6 +1084,12 @@
 
   function prevQ ( q ) {
       return q[ 0 ] + ( parseInt ( q[ 1 ] ) - 1 );
+  }
+
+  function clearStorage() {
+      if ( typeof Storage !== 'undefined' ) {
+          localStorage.clear();
+      }
   }
 
 }());

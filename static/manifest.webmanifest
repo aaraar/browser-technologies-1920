@@ -1,0 +1,12 @@
+{
+  "name": "WebDev Minor Enquete",
+  "short_name": "WebDev",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#003373",
+  "description": "Enquete voor het thuiswerken tijdens de webdev minor",
+  "theme_color": "#005a85",
+  "orientation": "any",
+  "scope": "/",
+  "start_url": "/"
+}

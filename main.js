@@ -57,15 +57,23 @@ function init ( initial = false ) {
     }
 }
 
-function renderPage ( data ) {
+function renderPage ( data, fromBegin = true ) {
     const title = `Vraag ${ data.state[ 1 ] }`;
-    if ( data[ data.state ] || data.state === 'finish' ) {
+    if ( data[ data.state ] ) {
         renderBody ( templates[ `${ data.state }Fn` ] ( {
             title: `${ title } | WebDev Enquete`,
             pageTitle: title,
             progress: data.state.substring ( 1 ),
             uuid: data.uuid,
             data: data[ data.state ]
+        } ) )
+    }else if ( data.state === 'finish' ) {
+        renderBody ( templates[ `${ data.state }Fn` ] ( {
+            title: `Afronden | WebDev Enquete`,
+            pageTitle: 'Afronden',
+            progress: data.state.substring ( 1 ),
+            uuid: data.uuid,
+            data: data
         } ) )
     } else if ( data.state === 'done' ) {
         renderBody ( templates[ `${ data.state }Fn` ] ( {
@@ -74,7 +82,8 @@ function renderPage ( data ) {
             progress: 6,
             uuid: data.uuid,
             fromBegin: true
-        } ) )
+        } ) );
+        clearStorage();
     } else {
         renderBody ( templates[ `${ data.state }Fn` ] ( {
             title: `${ title } | WebDev Enquete`,
@@ -186,6 +195,7 @@ function toggleBlurClass ( ...els ) {
 function activatePrevNext () {
     document.querySelector ( 'form' ).addEventListener ( 'submit', ( e ) => {
         e.preventDefault ();
+        console.log(document.activeElement);
         if ( document.activeElement.value === 'Volgende vraag' ) {
             console.log ( "Volgende vraag" );
             getStorage().then(user => {
@@ -196,11 +206,32 @@ function activatePrevNext () {
                 renderPage(user);
                 init(false);
             })
-        } else {
+        } else if (document.activeElement.value === 'Vorige vraag') {
             console.log ( "Vorige vraag" );
             getStorage().then(user => {
                 console.log(prevQ(user.state));
                 user.state = prevQ(user.state);
+                storeData(user);
+                sendData(user);
+                renderPage(user);
+                init(false);
+            });
+        } else if (document.activeElement.value === 'Versturen') {
+            console.log ( "Versturen" );
+            getStorage().then(user => {
+                console.log('local state = done');
+                user.state = 'done';
+                storeData(user);
+                sendData(user);
+                renderPage(user, false);
+                init(false);
+                clearStorage();
+            });
+        } else {
+            console.log ( "Afronden" );
+            getStorage().then(user => {
+                console.log('finish');
+                user.state = 'finish';
                 storeData(user);
                 sendData(user);
                 renderPage(user);
@@ -212,13 +243,15 @@ function activatePrevNext () {
 
 function watchForm () {
     const form = document.querySelector ( 'form' );
-    const state = form.elements.q.value;
+    const state = form.elements.q.value || 'done';
     form.addEventListener ( 'change', ( e ) => {
         updateEntry ( form, state )
     } );
-    document.getElementById ( 'desc' ).addEventListener ( 'keyup', ( e ) => {
-        updateEntry ( form, state )
-    } )
+    document.querySelectorAll ( 'desc' ).forEach(desc => {
+        desc.addEventListener ( 'keyup', ( e ) => {
+            updateEntry ( form, state )
+        } )
+    })
 }
 
 function storeData ( data ) {
@@ -338,4 +371,10 @@ function nextQ ( q ) {
 
 function prevQ ( q ) {
     return q[ 0 ] + ( parseInt ( q[ 1 ] ) - 1 );
+}
+
+function clearStorage() {
+    if ( typeof Storage !== 'undefined' ) {
+        localStorage.clear();
+    }
 }

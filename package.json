@@ -9,7 +9,7 @@
     "build": "rollup -c",
     "start": "node index.js",
     "build:watch": "rollup -cw",
-    "dev": "nodemon index.js --ignore main.js --ignore 'static/*'"
+    "dev": "nodemon index.js --ignore main.js --ignore 'static/*' --ignore static/sw.js"
   },
   "dependencies": {
     "@rollup/plugin-commonjs": "^11.0.2",

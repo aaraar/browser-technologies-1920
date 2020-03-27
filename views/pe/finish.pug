@@ -7,6 +7,7 @@ block content
             progress(value='5' max='5') 5/5
             form(method='POST' action='/finish')
                 input(type='hidden' value=uuid name='uuid')
+                input(type='hidden' value='finish' name='q')
                 fieldset(name='q1')
                     legend Vraag 1
                     fieldset
@@ -57,4 +58,4 @@ block content
                         legend Beschrijving
                         label(for='desc5')  Zou je hier wat op willen aanmerken?
                             textarea#desc5(rows='4', wrap='hard', name='desc5')= data.q5.desc
-                input(type='submit' value='Afronden')
+                input(type='submit' value='Versturen')

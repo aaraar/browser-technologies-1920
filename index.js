@@ -16,6 +16,13 @@ client.connect ( err => {
 
     app.use ( express.static ( 'static' ) );
 
+    app.get('/404', (req, res) => {
+        res.render ( '404', {
+            pageTitle: '404',
+            title: '404 | Webdev Enquete'
+        } );
+    });
+
     app.get ( '/begin', ( req, res ) => {
         res.render ( '404', {
             pageTitle: '404',
@@ -34,7 +41,6 @@ client.connect ( err => {
     } );
 
     app.post('/update-user', (req, res) => {
-        console.log(req.body);
         collection.replaceOne (
             { uuid: req.body.uuid },
             req.body,
