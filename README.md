@@ -75,6 +75,24 @@ Er wordt extra form validatie toegevoegd die relevant is voor een range (een req
 De overzicht pagina bevat alle eerder genoemde enhancement
 ![Usable Index](./onderzoek/images/pleasurableFin.png)
 
+### Browsersupport
+#### Chrome (latest) ✅ Full
+![Chrome](./onderzoek/images/pleasurable%20Q.png)
+
+#### Firefox (latest) ✅ Full
+![Firefox](./onderzoek/images/firefox.png)
+
+#### Safari (latest) ✅ Full
+![Safari](./onderzoek/images/safari.png)
+
+#### IE11 ✅ Full (klein beetje gecheat met een fetch polyfill, maar wilde graag full support tot IE11)
+![Safari](./onderzoek/images/ie11.png)
+
+#### Mobile Chrome (latest) ✅ Full
+![Mobile](./onderzoek/images/pleasurableMob.jpg)
+De range tooltip is hier standaard al naar beneden omdat het anders een hele nare UX heeft waarbij je eerst moet klikken.
+Hiervoor wordt een globale variabele gezet wanneer er een touch wordt gedaan bij het eerste scherm.
+
 #### Hoe werkt het
 Om de functionele laag werkend te krijgen heb ik alle logica voor dit formulier op een node (express) server afgehandeld en schrijf
 ik de data weg naar een MongDB (Database). Elke keer dat er een stap wordt gezet wordt er een post request gemaakt naar de server,
