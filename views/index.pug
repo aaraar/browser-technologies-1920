@@ -10,13 +10,12 @@ block content
                     legend Start nieuwe enquete
                     section
                         p
-                            strong Voer een studentnummer in om makkelijk terug te komen of laat het veld leeg om anoniem te blijven
+                            strong Voer een studentnummer in om makkelijk terug te komen
                         p
-                            em Als je het veld leeg laat, ontvang je een unieke code en/of website link die je moet bewaren om terug te komen
+                            em Log later weer in met je studentnummer als je de enquete niet in één keer afmaakt
                     label(for='uuid')
-                        p Studentnummer
-                            span  (optioneel):
-                        input#uuid(type='text' name='uuid' inputmode="numeric" pattern="[0-9]{9}*" autocomplete="one-time-code" minlength="9" maxlength="9")
+                        p Studentnummer:
+                        input#uuid(type='text' name='uuid' inputmode="numeric" pattern="[0-9]{9}" autocomplete="one-time-code" minlength="9" maxlength="9")
                     input(type='submit' value='Begin')#begin
                     if existingUuid
                         p

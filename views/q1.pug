@@ -2,7 +2,7 @@ extends layouts/main-layout.pug
 block content
     article
         header
-            p= uuid
+            p Je kunt elk moment stoppen en weer verdergaan met je studentnummer: #{uuid}
         if data
             form(method='POST' action='/question')
                 input(type='hidden' value=uuid name='uuid')

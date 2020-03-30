@@ -17,11 +17,20 @@ self.addEventListener ( 'install', ( event ) => {
 } );
 
 self.addEventListener ( 'fetch', ( event ) => {
-    if ( isCoreGetRequest ( event.request ) ) {
+    if ( isCoreGetRequest ( event.request.url ) ) {
         event.respondWith (
             caches.open ( 'core' ).then ( ( cache ) => {
                 console.log ( 'Core Asset request' );
-                return cache.match ( event.request.url )
+                cache.match ( event.request.url ).then( res => {
+                    if (res) return res;
+                    else {
+                        return fetch(event.request.url).then((response) => {
+                            let responseClone = response.clone();
+                            cache.put(event.request.url, responseClone);
+                            return response;
+                        })
+                    }
+                })
             } ).catch ( () => {
                 return new Response ( 'CORE_ASSETS not found in cache' );
             } )

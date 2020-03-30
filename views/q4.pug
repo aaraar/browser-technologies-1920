@@ -2,7 +2,7 @@ extends layouts/main-layout.pug
 block content
     article
         header
-            p= uuid
+            p Je kunt elk moment stoppen en weer verdergaan met je studentnummer: #{uuid}
         if data
             form(method='POST' action='/question')
                 input(type='hidden' value=uuid name='uuid')
@@ -29,5 +29,6 @@ block content
                     legend Beschrijving
                     label(for='desc')  Zou je hier wat op willen aanmerken?
                         textarea#desc(rows='4', wrap='hard', name='desc')
+
                 input(type='submit' value='Vorige vraag' name='action')
                 input(type='submit' value='Volgende vraag' name='action')

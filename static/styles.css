@@ -53,16 +53,6 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
-/*********************
-VARIABLES
-*********************/
-:root {
-    --dark: #000;
-    --light: #fff;
-    --primary: #005a85;
-    --secondary: #ffa57a;
-}
-
 
 /*********************
 FONTS
@@ -153,6 +143,22 @@ ANIMATIONS
     }
 }
 
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    } 20% {
+        transform: translateX(-10px);
+    } 40% {
+        transform: translateX(10px);
+    } 60% {
+        transform: translateX(-10px);
+    } 80% {
+        transform: translateX(10px);
+    } 100% {
+        transform: translateX(0);
+    }
+}
+
 /*********************
 STYLING
 *********************/
@@ -172,8 +178,8 @@ footer {
     width: 100vw;
     flex-shrink: 0;
     padding: 20px;
-    background-color: var(--primary);
-    color: var(--secondary);
+    background-color: #005a85;
+    color: #ffa57a;
 }
 
 footer div {
@@ -205,8 +211,9 @@ body .app > header .title {
     padding: 2em 1em 1em;
     width: fit-content;
     width: -moz-fit-content;
-    background-color: var(--primary);
-    color: var(--secondary);
+    max-width: 35ch;
+    background-color: #005a85;
+    color: #ffa57a;
     animation: slideInTop 0.3s ease-out;
 }
 
@@ -242,6 +249,7 @@ main {
 }
 
 form {
+    position: relative;
     animation-delay: 0.3s;
     animation: fadeIn 0.6s ease-out;
     padding: 1em;
@@ -260,13 +268,13 @@ fieldset:nth-of-type(2) {
 
 legend {
     border-radius: 5px;
-    background-color: var(--primary);
-    color: var(--secondary);
+    background-color: #005a85;
+    color: #ffa57a;
     padding: 10px;
 }
 
 label {
-    color: var(--dark);
+    color: #111;;
     display: flex;
     flex-direction: column;
 }
@@ -312,7 +320,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
 input[type="number"]::-webkit-inner-spin-button:hover,
 input[type="number"]::-webkit-inner-spin-button:active{
-    box-shadow: 0 0 2px var(--primary);
+    box-shadow: 0 0 2px #005a85;
     opacity: .8;
 }
 
@@ -325,23 +333,24 @@ input[type="number"]:-webkit-autofill {
 input[type="submit"] {
     border-radius: 5px;
     padding: 1em;
-    background-color: var(--primary);
-    color: var(--secondary);
+    background-color: #005a85;
+    color: #ffa57a;
     cursor: pointer;
     transition: 0.3s ease-in-out;
     margin-right: 1em;
     width: -moz-fit-content;
     width: fit-content;
+    max-width: 40ch;
     min-width: 10ch;
 }
 .done .content a:hover,
 input[type="submit"]:hover {
-    color: var(--primary);
-    background-color: var(--secondary);
+    color: #005a85;
+    background-color: #ffa57a;
 }
 
 article.index header {
-    color: var(--dark);
+    color: #111;
 }
 article.index form {
     background-color: initial;
@@ -352,7 +361,7 @@ article.index form {
 article.index input[type="text"] {
     width: 12ch;
     height: 4ch;
-    border: 1px solid var(--dark);
+    border: 1px solid #111;
 }
 
 article.index p strong {
@@ -375,7 +384,7 @@ article.index p span {
 }
 
 .done h2 {
-    color: var(--dark);
+    color: #111;
 }
 .done h3 {
     font-size: 3em;
@@ -414,9 +423,9 @@ article.index p span {
 #onlineStatus {
     margin: 5px 0 0 1em;
     max-width: 30ch;
-    background-color: var(--secondary);
-    color: var(--primary);
-    border: 2px var(--primary) solid;
+    background-color: #ffa57a;
+    color: #005a85;
+    border: 2px #005a85 solid;
     padding: 1em;
     animation: slideInLeft 0.5s ease-out;
 }
@@ -432,4 +441,140 @@ article.index p span {
 
 #onlineStatus.offline {
     display: block;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    margin: 18px 0;
+    width: 100%;
+}
+input[type=range]:focus {
+    outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: #005a85;
+    border-radius: 1.3px;
+}
+input[type=range]::-webkit-slider-thumb {
+    height: 36px;
+    width: 36px;
+    border-radius: 3px;
+    background: #ffa57a;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -14px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #005a85;
+}
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: #005a85;
+    border-radius: 1.3px;
+}
+input[type=range]::-moz-range-thumb {
+    border: 1px solid #111;
+    height: 36px;
+    width: 36px;
+    border-radius: 3px;
+    background: #ffa57a;
+    cursor: pointer;
+}
+input[type=range]::-ms-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: transparent;
+    border-color: transparent;
+    border-width: 16px 0;
+    color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+    background: #005a85;
+    border-radius: 2.6px;
+}
+input[type=range]::-ms-fill-upper {
+    background: #005a85;
+    border-radius: 2.6px;
+}
+input[type=range]::-ms-thumb {
+    height: 36px;
+    width: 36px;
+    border-radius: 3px;
+    background: #ffa57a;
+    cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+    background: #005a85;
+}
+input[type=range]:focus::-ms-fill-upper {
+    background: #005a85;
+}
+
+.rangeWrapper {
+    max-width: 200px;
+    position: relative;
+    padding: 0;
+    margin-top: 1em;
+}
+
+.rangeValue {
+    top: 8px;
+    color: #005a85;
+    padding: 4px 12px;
+    position: absolute;
+    border-radius: 4px;
+    left: 49%;
+    transform: translateX(-50%);
+    transition: top 0.3s ease-out, background-color 0.3s ease-out, color 0.3s ease-out;
+}
+
+.rangeValue.active {
+    background: #005a85;
+    color: #ffa57a;
+    top: 46px;
+    cursor: pointer;
+}
+
+.rangeValue::after {
+    pointer-events: none;
+    display: none;
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid #005a85;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    top: -9px;
+    left: 50%;
+    margin-left: -5px;
+    margin-top: -1px;
+}
+
+.rangeValue.active::after {
+    display: block;
+}
+
+.invalidWarning .desc {
+    position: relative;
+    border: 1px solid red;
+    animation: shake 0.6s ease;
+}
+
+.invalidWarning::after {
+    position: absolute;
+    bottom: -4ch;
+    left: 1em;
+    content: "De beschrijving is verplicht als er een onvoldoende wordt gegeven op de vraag";
+    color: red;
+    font-weight: bold;
 }

@@ -13,49 +13,54 @@ block content
                     fieldset
                         legend Cijfer
                         label(for='grade1')  Hoe vond je de communicatie van de docenten en docent-assistenten over slack
-                            input#grade1(required type='number', name='grade1' min='1', max='10' value=data.q1.grade)
+                            div
+                                input#grade1(required type='number', name='grade1' min='1', max='10' value=data.q1.grade)
                     fieldset
                         legend Beschrijving
                         label(for='desc1')  Zou je hier wat op willen aanmerken?
-                            textarea#desc1(rows='4', wrap='hard', name='desc1')= data.q1.desc
+                            textarea#desc1.desc(rows='4', wrap='hard', name='desc1')= data.q1.desc
                 fieldset(name='q2')
                     legend Vraag 2
                     fieldset
                         legend Cijfer
                         label(for='grade2')  Hoe vond je de digitale colleges over Jitsi
-                            input#grade2(required type='number', name='grade2' min='1', max='10' value=data.q2.grade)
+                            div
+                                input#grade2(required type='number', name='grade2' min='1', max='10' value=data.q2.grade)
                     fieldset
                         legend Beschrijving
                         label(for='desc2')  Zou je hier wat op willen aanmerken?
-                            textarea#desc2(rows='4', wrap='hard', name='desc2')= data.q2.desc
+                            textarea#desc2.desc(rows='4', wrap='hard', name='desc2')= data.q2.desc
                 fieldset(name='q3')
                     legend Vraag 3
                     fieldset
                         legend Cijfer
                         label(for='grade3')  Hoe vond je de digitale colleges over Bongo
-                            input#grade3(required type='number', name='grade3' min='1', max='10' value=data.q3.grade)
+                            div
+                                input#grade3(required type='number', name='grade3' min='1', max='10' value=data.q3.grade)
                     fieldset
                         legend Beschrijving
                         label(for='desc3')  Zou je hier wat op willen aanmerken?
-                            textarea#desc3(rows='4', wrap='hard', name='desc3')= data.q3.desc
+                            textarea#desc3.desc(rows='4', wrap='hard', name='desc3')= data.q3.desc
                 fieldset(name='q4')
                     legend Vraag 4
                     fieldset
                         legend Cijfer
                         label(for='grade4')  Hoe vond je de hulp van je mede-studenten tijdens de weken thuis?
-                            input#grade4(required type='number', name='grade4' min='1', max='10' value=data.q4.grade)
+                            div
+                                input#grade4(required type='number', name='grade4' min='1', max='10' value=data.q4.grade)
                     fieldset
                         legend Beschrijving
                         label(for='desc4')  Zou je hier wat op willen aanmerken?
-                            textarea#desc4(rows='4', wrap='hard', name='desc4')= data.q4.desc
+                            textarea#desc4.desc(rows='4', wrap='hard', name='desc4')= data.q4.desc
                 fieldset(name='q5')
                     legend Vraag 5
                     fieldset
                         legend Cijfer
                         label(for='grade5')  Hoe vaak heb je gegamed tussendoor?
-                            input#grade5(required type='number', name='grade5' min='1', max='10' value=data.q5.grade)
+                            div
+                                input#grade5(required type='number', name='grade5' min='1', max='10' value=data.q5.grade)
                     fieldset
                         legend Beschrijving
                         label(for='desc5')  Zou je hier wat op willen aanmerken?
-                            textarea#desc5(rows='4', wrap='hard', name='desc5')= data.q5.desc
+                            textarea#desc5.desc(rows='4', wrap='hard', name='desc5')= data.q5.desc
                 input(type='submit' value='Versturen')

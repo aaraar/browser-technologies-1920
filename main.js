@@ -5,6 +5,7 @@ import q4Fn     from './views/pe/q4.pug';
 import q5Fn     from './views/pe/q5.pug';
 import finishFn from './views/pe/finish.pug';
 import doneFn   from './views/pe/done.pug';
+import 'whatwg-fetch'
 
 const templates = {
     q1Fn: q1Fn,
@@ -39,7 +40,6 @@ function init ( initial = false ) {
             console.log ( 'index Page' );
             document.querySelector ( 'form' ).addEventListener ( 'submit', e => {
                 e.preventDefault ();
-                // console.log(e.target.elements.namedItem('uuid').value);
                 throwLoadingState ( () => {
                     return getAllUserData ( e.target.elements.namedItem ( 'uuid' ).value );
                 } )
@@ -52,6 +52,7 @@ function init ( initial = false ) {
         } else {
             console.log ( 'Question Page' );
             activatePrevNext ();
+            transformNumberToRange ();
             watchForm ();
         }
     }
@@ -67,7 +68,7 @@ function renderPage ( data, fromBegin = true ) {
             uuid: data.uuid,
             data: data[ data.state ]
         } ) )
-    }else if ( data.state === 'finish' ) {
+    } else if ( data.state === 'finish' ) {
         renderBody ( templates[ `${ data.state }Fn` ] ( {
             title: `Afronden | WebDev Enquete`,
             pageTitle: 'Afronden',
@@ -76,14 +77,15 @@ function renderPage ( data, fromBegin = true ) {
             data: data
         } ) )
     } else if ( data.state === 'done' ) {
+        const doneTitle = fromBegin ? 'Nogmaals bedankt' : 'Bedankt';
         renderBody ( templates[ `${ data.state }Fn` ] ( {
-            title: `Nogmaals bedankt | WebDev Enquete`,
-            pageTitle: 'Nogmaals bedankt',
+            title: `${ doneTitle } | WebDev Enquete`,
+            pageTitle: doneTitle,
             progress: 6,
             uuid: data.uuid,
-            fromBegin: true
+            fromBegin: fromBegin
         } ) );
-        clearStorage();
+        clearStorage ();
     } else {
         renderBody ( templates[ `${ data.state }Fn` ] ( {
             title: `${ title } | WebDev Enquete`,
@@ -145,7 +147,7 @@ function throwLoadingState ( promise ) {
 </g>
 </svg>`;
         const loadingModal = createNodeFromString ( `<div class="modal"><div class="loading">${ svg }</div></div>` );
-        body.append ( loadingModal );
+        body.appendChild ( loadingModal );
         promise ()
             .then ( ( data ) => {
                 toggleBlurClass ( header, main, footer );
@@ -193,50 +195,62 @@ function toggleBlurClass ( ...els ) {
 }
 
 function activatePrevNext () {
+    // if document.querySelector()
     document.querySelector ( 'form' ).addEventListener ( 'submit', ( e ) => {
-        e.preventDefault ();
-        console.log(document.activeElement);
-        if ( document.activeElement.value === 'Volgende vraag' ) {
-            console.log ( "Volgende vraag" );
-            getStorage().then(user => {
-                console.log(nextQ(user.state));
-                user.state = nextQ(user.state);
-                storeData(user);
-                sendData(user);
-                renderPage(user);
-                init(false);
-            })
-        } else if (document.activeElement.value === 'Vorige vraag') {
-            console.log ( "Vorige vraag" );
-            getStorage().then(user => {
-                console.log(prevQ(user.state));
-                user.state = prevQ(user.state);
-                storeData(user);
-                sendData(user);
-                renderPage(user);
-                init(false);
-            });
-        } else if (document.activeElement.value === 'Versturen') {
-            console.log ( "Versturen" );
-            getStorage().then(user => {
-                console.log('local state = done');
-                user.state = 'done';
-                storeData(user);
-                sendData(user);
-                renderPage(user, false);
-                init(false);
-                clearStorage();
-            });
-        } else {
-            console.log ( "Afronden" );
-            getStorage().then(user => {
-                console.log('finish');
-                user.state = 'finish';
-                storeData(user);
-                sendData(user);
-                renderPage(user);
-                init(false);
-            });
+        let input;
+        if ( e.explicitOriginalTarget ) {
+            e.preventDefault ();
+            input = e.explicitOriginalTarget
+        } else if ( document.activeElement.tagName === 'INPUT' ) {
+            e.preventDefault ();
+            input = document.activeElement
+        }
+        if ( input ) {
+            if ( input.value === 'Volgende vraag' && (e.target.elements.grade.value <= 5 && !e.target.elements.desc.value)) {
+                console.log ( "invalid" );
+                e.target.classList.toggle('invalidWarning', true);
+            } else if ( input.value === 'Volgende vraag') {
+                console.log ( "Volgende vraag" );
+                getStorage ().then ( user => {
+                    console.log ( nextQ ( user.state ) );
+                    user.state = nextQ ( user.state );
+                    storeData ( user );
+                    sendData ( user );
+                    renderPage ( user );
+                    init ( false );
+                } );
+            } else if ( input.value === 'Vorige vraag' ) {
+                console.log ( "Vorige vraag" );
+                getStorage ().then ( user => {
+                    console.log ( prevQ ( user.state ) );
+                    user.state = prevQ ( user.state );
+                    storeData ( user );
+                    sendData ( user );
+                    renderPage ( user );
+                    init ( false );
+                } );
+            }  else if ( input.value === 'Versturen' ) {
+                console.log ( "Versturen" );
+                getStorage ().then ( user => {
+                    console.log ( 'local state = done' );
+                    user.state = 'done';
+                    storeData ( user );
+                    sendData ( user );
+                    renderPage ( user, false );
+                    init ( false );
+                    clearStorage ();
+                } );
+            } else {
+                console.log ( "Afronden" );
+                getStorage ().then ( user => {
+                    console.log ( 'finish' );
+                    user.state = 'finish';
+                    storeData ( user );
+                    sendData ( user );
+                    renderPage ( user );
+                    init ( false );
+                } );
+            }
         }
     }, false )
 }
@@ -247,11 +261,13 @@ function watchForm () {
     form.addEventListener ( 'change', ( e ) => {
         updateEntry ( form, state )
     } );
-    document.querySelectorAll ( 'desc' ).forEach(desc => {
-        desc.addEventListener ( 'keyup', ( e ) => {
-            updateEntry ( form, state )
+    document.querySelectorAll ( '.desc' ).forEach ( desc => {
+        desc.addEventListener ( 'keyup', () => {
+            updateEntry ( form, state );
+            console.log('hallo?');
+            form.classList.remove('invalidWarning');
         } )
-    })
+    } )
 }
 
 function storeData ( data ) {
@@ -316,7 +332,7 @@ function getStorage () {
 }
 
 function sendData ( data ) {
-    if (data._id) {
+    if ( data._id ) {
         delete data._id;
     }
     // send ajax request to server
@@ -373,8 +389,56 @@ function prevQ ( q ) {
     return q[ 0 ] + ( parseInt ( q[ 1 ] ) - 1 );
 }
 
-function clearStorage() {
+function clearStorage () {
     if ( typeof Storage !== 'undefined' ) {
-        localStorage.clear();
+        localStorage.clear ();
     }
+}
+
+function transformNumberToRange () {
+    document.querySelectorAll ( 'input[type="number"]' ).forEach ( number => {
+        const nullValue = !!number.value;
+        number.type = 'range';
+        number.parentElement.classList.add ( 'rangeWrapper' );
+        const output = number.value > 0
+            ? createNodeFromString ( `<output for="${ number.id }" class="rangeValue" id="${ number.id }Value">${ number.value }</output>` )
+            : createNodeFromString ( `<output for="${ number.id }" class="rangeValue" id="${ number.id }Value"></output>` );
+        number.insertAdjacentElement ( 'afterend', output );
+        number.value = nullValue ? number.value : 1;
+        setOutput ( number, output );
+
+        number.addEventListener ( 'click', ( e ) => {
+            output.classList.toggle ( 'active', true )
+        } );
+        number.addEventListener ( 'mouseover', ( e ) => {
+            output.classList.toggle ( 'active', true )
+        } );
+        number.addEventListener ( 'mouseout', ( e ) => {
+            output.classList.toggle ( 'active', false )
+        } );
+        output.addEventListener ( 'mouseover', ( e ) => {
+            output.classList.toggle ( 'active', true )
+        } );
+        output.addEventListener ( 'mouseout', ( e ) => {
+            output.classList.toggle ( 'active', false )
+        } );
+        number.addEventListener ( 'touchstart', ( e ) => {
+            output.classList.toggle ( 'active', true )
+        } );
+        document.getElementById ( number.id ).addEventListener ( 'change', ( e ) => {
+            setOutput ( number, output )
+        } );
+        document.getElementById ( number.id ).addEventListener ( 'input', ( e ) => {
+            setOutput ( number, output )
+        } )
+    } )
+}
+
+function setOutput ( range, output ) {
+    const value = range.value;
+    const min = range.min ? range.min : 0;
+    const max = range.max ? range.max : 10;
+    const percentage = Number ( ( ( value - min ) * 100 ) / ( max - min ) );
+    output.innerText = value;
+    output.style.left = `calc(${ percentage }% + (${ 18 - percentage * 0.34 }px))`;
 }

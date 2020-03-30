@@ -1,6 +1,7 @@
 import commonjs from '@rollup/plugin-commonjs'
 import resolve from '@rollup/plugin-node-resolve'
 import pug from 'rollup-plugin-pug'
+import babel from 'rollup-plugin-babel'
 
 export default {
     input: 'main.js',
@@ -15,6 +16,9 @@ export default {
             main: true,
             browser: true
         } ),
+        babel({
+            babelrc: true
+        }),
         commonjs ()
     ]
 }
