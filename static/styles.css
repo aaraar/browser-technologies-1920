@@ -564,7 +564,7 @@ input[type=range]:focus::-ms-fill-upper {
     display: block;
 }
 
-.invalidWarning .desc {
+.invalidWarning textarea {
     position: relative;
     border: 1px solid red;
     animation: shake 0.6s ease;

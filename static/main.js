@@ -2446,13 +2446,14 @@
 	pug_html = pug_html + "Cijfer\u003C\u002Flegend\u003E";
 	pug_html = pug_html + "\u003Clabel for=\"grade\"\u003E";
 	pug_html = pug_html + " Hoe vond je de communicatie van de docenten en docent-assistenten over slack";
-	pug_html = pug_html + "\u003Cinput id=\"grade\" required type=\"number\" name=\"grade\" min=\"1\" max=\"10\"\u003E\u003C\u002Flabel\u003E\u003C\u002Ffieldset\u003E";
+	pug_html = pug_html + "\u003Cdiv\u003E";
+	pug_html = pug_html + "\u003Cinput id=\"grade\" required type=\"number\" name=\"grade\" min=\"1\" max=\"10\"\u003E\u003C\u002Fdiv\u003E\u003C\u002Flabel\u003E\u003C\u002Ffieldset\u003E";
 	pug_html = pug_html + "\u003Cfieldset\u003E";
 	pug_html = pug_html + "\u003Clegend\u003E";
 	pug_html = pug_html + "Beschrijving\u003C\u002Flegend\u003E";
 	pug_html = pug_html + "\u003Clabel for=\"desc\"\u003E";
 	pug_html = pug_html + " Zou je hier wat op willen aanmerken?";
-	pug_html = pug_html + "\u003Ctextarea id=\"desc\" rows=\"4\" wrap=\"hard\" name=\"desc\"\u003E\u003C\u002Ftextarea\u003E\u003C\u002Flabel\u003E\u003C\u002Ffieldset\u003E";
+	pug_html = pug_html + "\u003Ctextarea class=\"desc\" id=\"desc\" rows=\"4\" wrap=\"hard\" name=\"desc\"\u003E\u003C\u002Ftextarea\u003E\u003C\u002Flabel\u003E\u003C\u002Ffieldset\u003E";
 	pug_html = pug_html + "\u003Cinput type=\"submit\" value=\"Volgende vraag\" name=\"action\"\u003E\u003C\u002Fform\u003E";
 	}
 	pug_html = pug_html + "\u003C\u002Farticle\u003E\u003C\u002Fmain\u003E";
@@ -2528,13 +2529,14 @@
 	pug_html = pug_html + "Cijfer\u003C\u002Flegend\u003E";
 	pug_html = pug_html + "\u003Clabel for=\"grade\"\u003E";
 	pug_html = pug_html + " Hoe vond je de digitale colleges over Jitsi";
-	pug_html = pug_html + "\u003Cinput id=\"grade\" required type=\"number\" name=\"grade\" min=\"1\" max=\"10\"\u003E\u003C\u002Flabel\u003E\u003C\u002Ffieldset\u003E";
+	pug_html = pug_html + "\u003Cdiv\u003E";
+	pug_html = pug_html + "\u003Cinput id=\"grade\" required type=\"number\" name=\"grade\" min=\"1\" max=\"10\"\u003E\u003C\u002Fdiv\u003E\u003C\u002Flabel\u003E\u003C\u002Ffieldset\u003E";
 	pug_html = pug_html + "\u003Cfieldset\u003E";
 	pug_html = pug_html + "\u003Clegend\u003E";
 	pug_html = pug_html + "Beschrijving\u003C\u002Flegend\u003E";
 	pug_html = pug_html + "\u003Clabel for=\"desc\"\u003E";
 	pug_html = pug_html + " Zou je hier wat op willen aanmerken?";
-	pug_html = pug_html + "\u003Ctextarea id=\"desc\" rows=\"4\" wrap=\"hard\" name=\"desc\"\u003E\u003C\u002Ftextarea\u003E\u003C\u002Flabel\u003E\u003C\u002Ffieldset\u003E";
+	pug_html = pug_html + "\u003Ctextarea class=\"desc\" id=\"desc\" rows=\"4\" wrap=\"hard\" name=\"desc\"\u003E\u003C\u002Ftextarea\u003E\u003C\u002Flabel\u003E\u003C\u002Ffieldset\u003E";
 	pug_html = pug_html + "\u003Cinput type=\"submit\" value=\"Vorige vraag\" name=\"action\"\u003E";
 	pug_html = pug_html + "\u003Cinput type=\"submit\" value=\"Volgende vraag\" name=\"action\"\u003E\u003C\u002Fform\u003E";
 	}
@@ -3790,8 +3792,8 @@
 	  });
 	  document.querySelectorAll('.desc').forEach(function (desc) {
 	    desc.addEventListener('keyup', function () {
+	      console.log("lol");
 	      updateEntry(form, state);
-	      console.log('hallo?');
 	      form.classList.remove('invalidWarning');
 	    });
 	  });

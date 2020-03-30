@@ -263,8 +263,8 @@ function watchForm () {
     } );
     document.querySelectorAll ( '.desc' ).forEach ( desc => {
         desc.addEventListener ( 'keyup', () => {
+            console.log ( "lol" );
             updateEntry ( form, state );
-            console.log('hallo?');
             form.classList.remove('invalidWarning');
         } )
     } )

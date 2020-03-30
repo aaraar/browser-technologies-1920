@@ -54,6 +54,27 @@ en daarna de extra laag eroverheen gieten.
 5. Je kan het niet nog een keer invullen
 ![Functional nog een keer](./onderzoek/images/functionalAgain.png)
 
+### De usable laag
+Styling toegevoegd voor beter overzicht op index
+![Usable Index](./onderzoek/images/usableBegin.png)
+
+En op de vragen
+![Usable Question](./onderzoek/images/usableQ.png)
+
+### De pleasurable laag
+Op de pleasurable laag wordt gebruik gemaakt van de localstorage en AJAX om de pagina's te laden.
+Voor de gebruiker is er weinig verschil in gebruik afgezien van een groot performance verschil.
+Daarnaast hoeft de gebruiker niet opnieuw in te loggen om verder te gaan door de local storage.
+
+De vragen worden progressive enhanced door Number input types om te zetten naar een range input
+![Usable Index](./onderzoek/images/pleasurable%20Q.png)
+
+Er wordt extra form validatie toegevoegd die relevant is voor een range (een required is niet mogelijk op een range ivm dat er altijd een waarde is)
+![Usable Index](./onderzoek/images/pleasurableValid.png)
+
+De overzicht pagina bevat alle eerder genoemde enhancement
+![Usable Index](./onderzoek/images/pleasurableFin.png)
+
 #### Hoe werkt het
 Om de functionele laag werkend te krijgen heb ik alle logica voor dit formulier op een node (express) server afgehandeld en schrijf
 ik de data weg naar een MongDB (Database). Elke keer dat er een stap wordt gezet wordt er een post request gemaakt naar de server,

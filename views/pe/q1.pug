@@ -24,9 +24,10 @@ block content
                 fieldset
                     legend Cijfer
                     label(for='grade')  Hoe vond je de communicatie van de docenten en docent-assistenten over slack
-                        input#grade(required type='number', name='grade' min='1', max='10')
+                        div
+                            input#grade(required type='number', name='grade' min='1', max='10')
                 fieldset
                     legend Beschrijving
                     label(for='desc')  Zou je hier wat op willen aanmerken?
-                        textarea#desc(rows='4', wrap='hard', name='desc')
+                        textarea#desc.desc(rows='4', wrap='hard', name='desc')
                 input(type='submit' value='Volgende vraag' name='action')
