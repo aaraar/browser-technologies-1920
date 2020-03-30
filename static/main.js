@@ -3539,6 +3539,10 @@
 	  self.Response = Response;
 	}
 
+	var isMobile = false;
+	document.addEventListener('touchstart', function () {
+	  isMobile = true;
+	});
 	var templates = {
 	  q1Fn: q1Fn,
 	  q2Fn: q2Fn,
@@ -3957,13 +3961,6 @@
 	    output.addEventListener('mouseout', function (e) {
 	      output.classList.toggle('active', false);
 	    });
-	    output.addEventListener('touchstart', function (e) {
-	      output.classList.toggle('active', true);
-	      number.focus();
-	    });
-	    output.addEventListener('touchend', function (e) {
-	      output.classList.toggle('active', false);
-	    });
 	    number.addEventListener('touchstart', function (e) {
 	      output.classList.toggle('active', true);
 	    });
@@ -3977,6 +3974,10 @@
 	}
 
 	function setOutput(range, output) {
+	  if (isMobile) {
+	    output.classList.toggle('active', true);
+	  }
+
 	  var value = range.value;
 	  var min = range.min ? range.min : 0;
 	  var max = range.max ? range.max : 10;

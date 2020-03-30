@@ -7,6 +7,11 @@ import finishFn from './views/pe/finish.pug';
 import doneFn   from './views/pe/done.pug';
 import 'whatwg-fetch'
 
+let isMobile = false;
+document.addEventListener('touchstart', () => {
+    isMobile = true;
+});
+
 const templates = {
     q1Fn: q1Fn,
     q2Fn: q2Fn,
@@ -429,13 +434,6 @@ function transformNumberToRange () {
         output.addEventListener ( 'mouseout', ( e ) => {
             output.classList.toggle ( 'active', false )
         } );
-        output.addEventListener ( 'touchstart', ( e ) => {
-            output.classList.toggle ( 'active', true );
-            number.focus();
-        } );
-        output.addEventListener ( 'touchend', ( e ) => {
-            output.classList.toggle ( 'active', false )
-        } );
         number.addEventListener ( 'touchstart', ( e ) => {
             output.classList.toggle ( 'active', true )
         } );
@@ -449,6 +447,9 @@ function transformNumberToRange () {
 }
 
 function setOutput ( range, output ) {
+    if (isMobile) {
+        output.classList.toggle ( 'active', true );
+    }
     const value = range.value;
     const min = range.min ? range.min : 0;
     const max = range.max ? range.max : 10;
