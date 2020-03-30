@@ -3938,6 +3938,7 @@
 	    setOutput(number, output);
 	    number.addEventListener('click', function (e) {
 	      output.classList.toggle('active', true);
+	      number.focus();
 	    });
 	    number.addEventListener('mouseover', function (e) {
 	      output.classList.toggle('active', true);
@@ -3945,10 +3946,22 @@
 	    number.addEventListener('mouseout', function (e) {
 	      output.classList.toggle('active', false);
 	    });
+	    output.addEventListener('click', function (e) {
+	      output.classList.toggle('active', true);
+	      number.focus();
+	    });
 	    output.addEventListener('mouseover', function (e) {
 	      output.classList.toggle('active', true);
+	      number.focus();
 	    });
 	    output.addEventListener('mouseout', function (e) {
+	      output.classList.toggle('active', false);
+	    });
+	    output.addEventListener('touchstart', function (e) {
+	      output.classList.toggle('active', true);
+	      number.focus();
+	    });
+	    output.addEventListener('touchend', function (e) {
 	      output.classList.toggle('active', false);
 	    });
 	    number.addEventListener('touchstart', function (e) {

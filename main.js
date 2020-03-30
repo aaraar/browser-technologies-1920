@@ -408,18 +408,32 @@ function transformNumberToRange () {
         setOutput ( number, output );
 
         number.addEventListener ( 'click', ( e ) => {
-            output.classList.toggle ( 'active', true )
+            output.classList.toggle ( 'active', true );
+            number.focus();
+
         } );
         number.addEventListener ( 'mouseover', ( e ) => {
-            output.classList.toggle ( 'active', true )
+            output.classList.toggle ( 'active', true );
         } );
         number.addEventListener ( 'mouseout', ( e ) => {
             output.classList.toggle ( 'active', false )
         } );
+        output.addEventListener ( 'click', ( e ) => {
+            output.classList.toggle ( 'active', true );
+            number.focus();
+        } );
         output.addEventListener ( 'mouseover', ( e ) => {
-            output.classList.toggle ( 'active', true )
+            output.classList.toggle ( 'active', true );
+            number.focus();
         } );
         output.addEventListener ( 'mouseout', ( e ) => {
+            output.classList.toggle ( 'active', false )
+        } );
+        output.addEventListener ( 'touchstart', ( e ) => {
+            output.classList.toggle ( 'active', true );
+            number.focus();
+        } );
+        output.addEventListener ( 'touchend', ( e ) => {
             output.classList.toggle ( 'active', false )
         } );
         number.addEventListener ( 'touchstart', ( e ) => {
