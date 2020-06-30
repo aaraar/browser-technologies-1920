@@ -95,7 +95,7 @@ er dus voor dat je bestand altijd geschreven kan worden naar de map die je aange
 
 ### Gebruik
 Je zou writeToFile en checkFile ook los kunnen gebruiken voor andere bestandstypes, daarom is het zo abstract mogelijk en zul je dus bij het aanroepen nog een bestandstype mee moeten geven
-Hoe je het nu zou gebruiken als ik data weg wil schrijven naar een JSON bestand doe ik het volgende 
+HAls je data weg wilt schrijven naar een JSON bestand doe je het volgende: 
 ```javascript
 const path = require( 'path' );
 const writePath = path.join( __dirname, 'data' );
@@ -141,7 +141,7 @@ Als het een groter project is met meerdere developers, is er hopelijk ook een ba
 patterns voor het gebruik ervan, maar neem aan dat we als frontenders nu lekker aab het prototypen zijn.
 Om een simpele mongoDB op te zetten, maak ik zelf altijd gebruik van hun eigen [MongoDB Atlas Cloud dienst](https://mongodb.com).
 
-Het fijne aan MongoDB als Javscript developer is dat het gebruik maakt van JSON syntax voor het opslaan van data.
+Het fijne aan MongoDB als Javascript developer is dat het gebruik maakt van JSON syntax voor het opslaan van data.
 Om te beginnen zul je een account aan moeten maken en ik loop je even door de stappen heen, mocht het verwarrend zijn.
 Dit hoef je gelukkig maar 1 keer te doen en daarna kun je het voor altijd gebruiken.
 Heb je al een account, ga dan door naar [Gebruik](#gebruik)
@@ -195,40 +195,42 @@ Hier maken we zo nog even kleine aanpassingen aan, maar ga terug naar de cluster
 
 Ik heb hiervoor zelf een stukje herbruikbare code die je zelf ook kan gebruiken als je de goede .env variabelen instelt
 ```javascript
-const app = require('express')();
-const bodyParser = require('body-parser');
 require('dotenv').config();
-const port = process.env.PORT || 3000;
+const assert = require('assert');
 const MongoClient = require('mongodb').MongoClient;
-const uri = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASSWORD}@${process.env.MONGODB_SERVER}/${process.env.MONGODB_DB}?retryWrites=true&w=majority`;
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-client.connect(err => {
-    if (err) console.error(err);
-    const collection = client.db(process.env.MONGODB_DB).collection("users");
-    // perform actions on the collection object
+const uri = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASSWORD}@${process.env.MONGODB_SERVER}/test?retryWrites=true&w=majority`;
+const client = new MongoClient(uri, {useNewUrlParser: true, useUnifiedTopology: true});
+let database;
+
+client.connect((err, db) => {
+    assert.strictEqual(null, err);
+    database = db;
 });
+
+// Returns DB object when called
+module.exports.get = function() {
+    return database;
+}
 ```
 
 #### Data toevoegen
 Als je instellingen kloppen, kan je dus net als ik veel code hergebruiken en is het opzetten van een nieuw project vrij snel en simpel.
-Door de unifiedTopology blijft je server in connectie met je database en kun je dus alle server logica in de mongoDB callback gooien.
-Met het gebruik van bodyParser kunnen we dus heel simpel uit een formulier gepost op een post route wegschrijven naar de database als volgt
+Zoals je ziet wordt er onderaan het bestand een database object geexporteerd. Deze variabele kun je dus gebruiken in elke route zolang je het bestand maar importeert. Dit maakt het zo makkelijk modulair.
+Met het gebruik van bodyParser kunnen we nu heel simpel de data uit een formulier op een post route wegschrijven naar de database als volgt
 ```javascript
-client.connect(err => {
-    if (err) console.error(err);
-    const collection = client.db(process.env.MONGODB_DB).collection("users");
+const database = require('../controllers/db');
 
-    app.use(bodyParser.urlencoded({extended: false}));
-
-    app.post('/post', (req, res) => {
-          collection.insertOne(
-            {
-                name: req.body.name // req.body wordt een object dat alle formulier velden bevat onder de property van hun name value
-            } )
-            .then( () => {
-                // Vervolg stap
-            } )
-          });
+app.post('/post', (req, res) => {
+const mongo = database.get();
+const dataset = mongo.db('strvct').collection('dataset');
+dataset.insertOne(
+      {
+          name: req.body.name // req.body wordt een object dat alle formulier velden bevat onder de property van hun name value
+      } )
+      .then( () => {
+          // Vervolg stap
+      } )
+    });
 });
 ```
 Je kunt de data die je toevoegt makkelijk weer terug zien op mongodb.com bij de juiste database en collectie.
@@ -239,7 +241,10 @@ Ik raad aan om unieke ID's te gebruiken voor het zoeken (deze maakt mongo automa
 De reden om met ID's te werken is zodat je nooit 2 dezelfde items hebt op een zoek opdracht naar de database (tenzij je dit wilt natuurlijk, maar we willen voor nu even object ophalen)
 Ondestaande code zoekt op naar een naam die ingevuld is in het HTML formulier en stuurt het bijbehorende data object terug of een melding dat deze niet bestaat.
 ```javascript
-collection.findOne( { name: req.body.name } )
+const database = require('../controllers/db');
+const mongo = database.get();
+const dataset = mongo.db('strvct').collection('dataset');
+dataset.findOne( { name: req.body.name } )
     .then(data => {
         if (data) res.send(data);
         else res.send('No data found')
