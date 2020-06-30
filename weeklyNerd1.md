@@ -221,9 +221,9 @@ Met het gebruik van bodyParser kunnen we nu heel simpel de data uit een formulie
 const database = require('../controllers/db');
 
 app.post('/post', (req, res) => {
-const mongo = database.get();
-const dataset = mongo.db('strvct').collection('dataset');
-dataset.insertOne(
+   const mongo = database.get();
+   const dataset = mongo.db('strvct').collection('dataset');
+   dataset.insertOne(
       {
           name: req.body.name // req.body wordt een object dat alle formulier velden bevat onder de property van hun name value
       } )
